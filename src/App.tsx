@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import ShoppingCard from './components/ShoppingCard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<div className='navbar'>
+				<h3 className='logo'>Logo</h3>
+				<button className='btn shopping-cart-btn'>button</button>
+			</div>
+			<main>
+				<h2 className='title'>Products</h2>
+				<div className='items'>
+					<div className='item'>
+						<img className='item-image' alt='' />
+						<h4 className='item-name'>Telefon</h4>
+						<p></p>
+						<span className='item-price'>499$</span>
+						<button className='btn'>Add to cart</button>
+					</div>
+				</div>
+			</main>
+		</div>
+	);
 }
 
 export default App;
