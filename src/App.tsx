@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './App.module.scss';
+import { FaShoppingBag } from 'react-icons/fa';
+import { FaScrewdriverWrench } from 'react-icons/fa6';
 // import ShoppingCard from './components/ShoppingCard';
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
 			price: 199,
 			// image: snickersNikeSmall,
 			// image: require('./assets/img/snickers-nike-small.png'),
-			
+
 			image: require('./assets/img/nike-air-force.png'),
 		},
 		{
@@ -39,7 +41,7 @@ function App() {
 			description: 'Duis nibh sapien, placerat non nulla ac, suscipit laoreet tortor.',
 			price: 119,
 			// image: require('./assets/img/adidas.png'),
-			
+
 			image: require('./assets/img/gray-shoe.png'),
 		},
 		{
@@ -64,16 +66,25 @@ function App() {
 	];
 	return (
 		<div className={style.app}>
-			<div className={style.navbar}>
+			<div className={style.navbar__container}>
 				<div className={style.navbar__categories}>
-					<p>Clothes</p>
-					<p>Shoes</p>
-					<p>Accessories</p>
+					<button>Clothes</button>
+					<button>Shoes</button>
+					<button>Accessories</button>
 				</div>
-				<h3 className={style.logo}>FashionStore</h3>
-				<button className='btn shopping-cart-btn'>button</button>
+				<div className={style.navbar}>
+					<h3 className={style.logo}>FashionStore</h3>
+					<div className={style['icons-box']}>
+						
+						<button className={style['shopping-cart-btn']}>
+							<FaShoppingBag className={style.icon} size={22} />
+						</button>
+						<button className={style['shopping-cart-btn']}>
+							<FaScrewdriverWrench className={style.icon} size={22} />
+						</button>
+					</div>
+				</div>
 			</div>
-
 			<main className={style.main}>
 				<h2 className={style.title}>Shoes</h2>
 				<div className={style.items}>
