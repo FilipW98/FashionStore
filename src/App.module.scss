@@ -18,7 +18,7 @@
 
 	.navbar {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
 		width: 57%;
 
@@ -53,8 +53,18 @@
 		}
 
 		.logo {
-			text-align: center;
+			margin-right: .2em;
+			width: 29px;
+			height: 26px;
 		}
+
+		.logo-box{
+			display: flex;
+			justify-content: center;
+			align-items: end;
+		}
+
+
 		button {
 			cursor: pointer;
 		}

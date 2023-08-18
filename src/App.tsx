@@ -2,6 +2,7 @@ import React from 'react';
 import style from './App.module.scss';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench } from 'react-icons/fa6';
+import hangerImage from './assets/img/clothes-hanger.png';
 // import ShoppingCard from './components/ShoppingCard';
 
 function App() {
@@ -73,9 +74,10 @@ function App() {
 					<button>Accessories</button>
 				</div>
 				<div className={style.navbar}>
-					<h3 className={style.logo}>FashionStore</h3>
+					<div className={style['logo-box']}><img className={style.logo} src={hangerImage} alt="hanger" />
+					<h3>FashionStore</h3></div>
+				
 					<div className={style['icons-box']}>
-						
 						<button className={style['shopping-cart-btn']}>
 							<FaShoppingBag className={style.icon} size={22} />
 						</button>
