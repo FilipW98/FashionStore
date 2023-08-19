@@ -1,3 +1,6 @@
+@import "../../colors";
+
+
 .cart-shadow {
 	position: fixed;
 	height: 100%;
@@ -14,17 +17,26 @@
 	border-radius: 8px;
 	text-align: center;
 	background-color: rgb(214, 214, 214);
+	background-color: $primary-color;
 	z-index: 10;
 
 	.header {
 		position: relative;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		margin-bottom: 1em;
+		text-shadow: 1px 1px 1px rgba(20, 20, 19, 0.338);
+		
+		h2{
+			padding: 0.4em;
+			text-shadow: 1px 10px 10px 10px rgba(0, 0, 0, 0.825);
+			border-bottom: 4px solid $secondary-color;
+		}
 
 		.close-btn {
-			right: -2em;
-			top: -2em;
+			right: -1em;
+			top: -1em;
 			position: absolute;
 			background-color: transparent;
 			border: none;
@@ -36,7 +48,8 @@
         display: flex;
         flex-direction: column;
 		overflow-y: scroll;
-		max-height: 77%;
+		max-height: 70%;
+		border: 2px solid black;
 		.cart-item {
 			display: flex;
             align-items: center;
@@ -65,11 +78,6 @@
                 width: 10%;
             }
 		}
-
-
-        .checkout-btn{
-            align-self: center;
-        }
 	}
 
 	.total-price{
@@ -78,5 +86,20 @@
 		span{
 			font-weight: bold;
 		}
+	}
+
+	.checkout-btn{
+		align-self: center;
+		padding: 0.7em;
+		font-size: 1rem;
+		border-radius: 8px;
+		background-color: $secondary-color;
+		border: none;
+		transition: .3s;
+		box-shadow: 1px 1px 1px 1px rgba(69, 57, 27, 0.517);
+	}
+
+	.checkout-btn:hover{
+		transform: scale(1.1);
 	}
 }

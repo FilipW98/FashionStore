@@ -26,13 +26,13 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler,itemsInCart }) => {
 
 				<div className={style['icons-box']}>
 					<button className={style['shopping-cart-btn']} onClick={cartHandler}>
-						<FaShoppingBag className={style.icon} size={22} />
+						<FaShoppingBag className={style.icon} size={25} />
 						<div className={style.counter}>
 							<p>{itemsInCart.length}</p>
 						</div>
 					</button>
 					<button className={style['shopping-cart-btn']}>
-						<FaScrewdriverWrench className={style.icon} size={22} />
+						<FaScrewdriverWrench className={style.icon} size={25} />
 					</button>
 				</div>
 			</div>

@@ -27,7 +27,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) =
 						onClick={() => {
 							setIsCart(false);
 						}}>
-						<FaRegCircleXmark size={25} />
+						<FaRegCircleXmark  size={29} />
 					</button>
 				</div>
 				<div className={style['cart-items']}>
@@ -63,8 +63,8 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) =
 					})}
 
 				</div>
-                <p className={style['total-price']}>Total price: <span>$999</span></p>
-					<button className={`btn ${style['checkout-btn']}`}>Checkout</button>
+                {itemsInCart.length !== 0 && <p className={style['total-price']}>Total price: <span>$999</span></p>}
+					{itemsInCart.length !== 0 && <button className={`btn ${style['checkout-btn']}`}>Checkout</button>}
 			</div>
 		</div>
 	);

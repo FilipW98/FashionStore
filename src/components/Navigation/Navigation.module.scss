@@ -26,8 +26,8 @@
             align-items: center;
             width: 20px;
             height: 20px;
-            right: 0;
-            top: 25px;
+            right: 10px;
+            top: 30px;
             border-radius: 50%;
             background-color: $secondary-color;
             p{
@@ -75,6 +75,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        h2{
+            text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.241);
+        }
     }
 
     button {
