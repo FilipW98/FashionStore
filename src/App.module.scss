@@ -10,79 +10,10 @@
 	height: 100vh;
 	// background-color: #33333346;
 
-	.navbar__container {
-		display: flex;
-		justify-content: space-between;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.225);
-	}
-
-	.navbar {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 57%;
-
-		.shopping-cart-btn {
-			padding: 1em;
-			background-color: transparent;
-			border: none;
-		}
-		.shopping-cart-btn:hover {
-			background-color: gray;
-		}
-		.shopping-cart-btn:hover .icon {
-			color: rgba(255, 255, 255, 0.896);
-		}
-
-		&__categories {
-			display: flex;
-			width: 30%;
-			margin-left: 3em;
-			cursor: pointer;
-
-			button {
-				border: none;
-				padding: 0 1em;
-				background-color: transparent;
-				cursor: pointer;
-			}
-			button:hover {
-				background-color: rgba(0, 0, 0, 0.42);
-				color: rgba(255, 255, 255, 0.896);
-			}
-		}
-
-		.logo {
-			margin-right: .2em;
-			width: 29px;
-			height: 26px;
-		}
-
-		.logo-box{
-			display: flex;
-			justify-content: center;
-			align-items: end;
-		}
-
-
-		button {
-			cursor: pointer;
-		}
-
-		.icon {
-			color: #000000c3;
-		}
-		.icon:hover {
-			color: #fff;
-		}
-
-		.icons-box {
-			margin-right: 2em;
-		}
-	}
+	
 
 	.main {
-		padding: 2em;
+		padding: 2em 1em;
 
 		.title {
 			margin: 1em;
@@ -101,11 +32,18 @@
 				justify-content: end;
 				margin: 0.2em;
 				padding: 0.4em;
+				max-width: 350px;
+				width: 24%;
 				background-color: rgba(128, 128, 128, 0.282);
 
 				.item-img {
-					max-width: 320px;
-					max-height: 400px;
+					width: 100%;
+				}
+
+				.btn{
+					padding: .3em;
+					margin: 0.5em;
+					cursor: pointer;
 				}
 			}
 		}
