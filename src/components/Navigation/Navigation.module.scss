@@ -1,6 +1,9 @@
+@import "../../_colors.scss";
+
 .navbar__container {
     display: flex;
     justify-content: space-between;
+    line-height: 65px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.225);
 }
 
@@ -12,7 +15,7 @@
 
     .shopping-cart-btn {
         position: relative;
-        padding: 1em;
+        padding: 1.8em;
         background-color: transparent;
         border: none;
 
@@ -26,7 +29,7 @@
             right: 0;
             top: 25px;
             border-radius: 50%;
-            background-color: rgb(18, 184, 37);
+            background-color: $secondary-color;
             p{
                 color: #fff;
                 font-size: .7rem;
@@ -34,7 +37,7 @@
         }
     }
     .shopping-cart-btn:hover {
-        background-color: gray;
+        background-color: $background-item;
     }
     .shopping-cart-btn:hover .icon {
         color: rgba(255, 255, 255, 0.896);
@@ -54,12 +57,12 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: rgba(0, 0, 0, 0.42);
+            background-color: $background-item;
             color: rgba(255, 255, 255, 0.896);
         }
 
         .active{
-            border-bottom: 1px solid black;
+            border-bottom: 3px solid $secondary-color;
         }
     }
 
@@ -71,7 +74,7 @@
     .logo-box{
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: center;
     }
 
     button {

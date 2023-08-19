@@ -3,11 +3,11 @@ import style from './App.module.scss';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navigation from './components/Navigation/Navigation';
 
- export interface Items {
+export interface Items {
 	id: number;
-    name: string;
-    price: number;
-    image: any;
+	name: string;
+	price: number;
+	image: any;
 }
 
 function App() {
@@ -57,13 +57,13 @@ function App() {
 		setIsCart(true);
 	};
 
-	const addItemsToCart = (item:Items) => {
+	const addItemsToCart = (item: Items) => {
 		const newItem = {
 			...item,
 			count: 1,
 		};
-		setItems([...itemsInCart,newItem])
-	}
+		setItems([...itemsInCart, newItem]);
+	};
 
 	return (
 		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
@@ -71,15 +71,28 @@ function App() {
 			<div className={style.app}>
 				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} />
 				<main className={style.main}>
+					<div className={style['title-box']}>
 					<h3 className={style.title}>Shoes</h3>
+					<div className={style.underline}></div>
+					</div>
+					
 					<div className={style.items}>
 						{items.map(item => {
 							return (
 								<div className={style.item} key={item.id}>
 									<img className={style['item-img']} alt='shoes' src={item.image} />
-									<h4 className='item-name'>{item.name}</h4>
-									<span className='item-price'>${item.price}</span>
-									<button className='btn' onClick={() => {addItemsToCart(item)}}>Add to cart</button>
+									<div className={style['item-data']}>
+										{' '}
+										<h4 className={style['item-name']}>{item.name}</h4>
+										<span className='item-price'>${item.price}</span>
+										<button
+											className={`btn ${style['add-btn']}`}
+											onClick={() => {
+												addItemsToCart(item);
+											}}>
+											Add to cart
+										</button>
+									</div>
 								</div>
 							);
 						})}

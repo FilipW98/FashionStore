@@ -18,10 +18,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) =
 	});
 	return (
 		<div
-			className={style['cart-shadow']}
-			onClick={() => {
-				setIsCart(false);
-			}}>
+			className={style['cart-shadow']}>
 			<div className={style.shoppingCart}>
 				<div className={style.header}>
 					<h2>Shopping cart</h2>
