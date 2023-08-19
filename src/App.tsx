@@ -66,7 +66,7 @@ function App() {
 	}
 
 	return (
-		<div>
+		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
 			{isCart && <ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} />}
 			<div className={style.app}>
 				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} />
