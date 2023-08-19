@@ -3,15 +3,16 @@ import './ShoppingCart.module.scss';
 import { FaRegCircleXmark } from 'react-icons/fa6';
 import { FaTrashCan } from 'react-icons/fa6';
 import style from './ShoppingCart.module.scss';
+import {Items} from '../../App';
 
 interface ShoppingCartProps {
     setIsCart: (newIsCartValue: boolean) => void;
+    itemsInCart: Items[];
 }
 
-
-const ShoppingCart: React.FC<ShoppingCartProps> = ({setIsCart}) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ({setIsCart, itemsInCart}) => {
 	return (
-		<div className={style['cart-shadow']}>
+		<div className={style['cart-shadow']} onClick={() => {setIsCart(false)}}>
 			<div className={style.shoppingCart}>
 				<div className={style.header}>
 					<h2>Shopping cart</h2>

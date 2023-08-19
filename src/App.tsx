@@ -3,6 +3,13 @@ import style from './App.module.scss';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navigation from './components/Navigation/Navigation';
 
+ export interface Items {
+	id: number;
+    name: string;
+    price: number;
+    image: any;
+}
+
 function App() {
 	const items = [
 		{
@@ -44,18 +51,27 @@ function App() {
 	];
 
 	const [isCart, setIsCart] = useState(false);
+	const [itemsInCart, setItems] = useState<Items[]>([]);
 
 	const cartHandler = () => {
 		setIsCart(true);
 	};
 
+	const addItemsToCart = (item:Items) => {
+		const newItem = {
+			...item,
+			count: 1,
+		};
+		setItems([...itemsInCart,newItem])
+	}
+
 	return (
 		<div>
-			{isCart && <ShoppingCart setIsCart={setIsCart} />}
+			{isCart && <ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} />}
 			<div className={style.app}>
-				<Navigation cartHandler={cartHandler} />
+				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} />
 				<main className={style.main}>
-					<h2 className={style.title}>Shoes</h2>
+					<h3 className={style.title}>Shoes</h3>
 					<div className={style.items}>
 						{items.map(item => {
 							return (
@@ -63,7 +79,7 @@ function App() {
 									<img className={style['item-img']} alt='shoes' src={item.image} />
 									<h4 className='item-name'>{item.name}</h4>
 									<span className='item-price'>${item.price}</span>
-									<button className='btn'>Add to cart</button>
+									<button className='btn' onClick={() => {addItemsToCart(item)}}>Add to cart</button>
 								</div>
 							);
 						})}

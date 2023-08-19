@@ -11,9 +11,27 @@
     width: 57%;
 
     .shopping-cart-btn {
+        position: relative;
         padding: 1em;
         background-color: transparent;
         border: none;
+
+        .counter{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            right: 0;
+            top: 25px;
+            border-radius: 50%;
+            background-color: royalblue;
+            p{
+                color: #fff;
+                font-size: .7rem;
+            }
+        }
     }
     .shopping-cart-btn:hover {
         background-color: gray;
@@ -46,8 +64,7 @@
 
     .logo {
         margin-right: .2em;
-        width: 29px;
-        height: 26px;
+        width: 30px;
     }
 
     .logo-box{
