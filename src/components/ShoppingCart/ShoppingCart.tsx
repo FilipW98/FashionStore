@@ -1,4 +1,4 @@
-// import react from "react";
+import { useState } from 'react';
 import './ShoppingCart.module.scss';
 import { FaRegCircleXmark } from 'react-icons/fa6';
 import { FaTrashCan } from 'react-icons/fa6';
@@ -8,16 +8,33 @@ import { Items } from '../../App';
 interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
 	itemsInCart: Items[];
-	totalPrice:number;
+	totalPrice: number;
+	setItems: (newItems: Items[]) => void;
 }
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart,totalPrice }) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems }) => {
+	const [updatedItemPrice, setItemPrice] = useState(0);
 
+	const removeItemHandler = (itemId: number) => {
+		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
+		setItems(newItemsArr);
+	};
 
+	const updateItemCount = (numberOfItems: number, itemId: number) => {
+		const updatedItems = itemsInCart.map(item => {
+			if (item.id === itemId) {
+				return {
+					...item,
+					count: numberOfItems,
+				};
+			}
+			return item;
+		});
+		console.log(updatedItems);
+	};
 
 	return (
-		<div
-			className={style['cart-shadow']}>
+		<div className={style['cart-shadow']}>
 			<div className={style.shoppingCart}>
 				<div className={style.header}>
 					<h2>Shopping cart</h2>
@@ -26,15 +43,16 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart,tota
 						onClick={() => {
 							setIsCart(false);
 						}}>
-						<FaRegCircleXmark  size={29} />
+						<FaRegCircleXmark size={29} />
 					</button>
 				</div>
-				<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ""}`}>
+				<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ''}`}>
 					{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
 
 					{itemsInCart.map(item => {
+						const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 						return (
-							<div className={style['cart-item']}>
+							<div className={style['cart-item']} key={item.id}>
 								<img className={style['cart-img']} alt='shoe' src={item.image} />
 								<div className='item-info'>
 									<h4>{item.name}</h4>
@@ -42,28 +60,36 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart,tota
 								</div>
 								<select
 									className={style['item-number']}
-									// value={1}
-									// onChange={event => {
-									// 	onQuantityChange(product.id, event.target.value);
-									// }}
-								>
-									{/* {[...Array(10).keys()].map(number => {
-										const num = number + 1;
-										return (
+									onChange={event => {
+										const numberOfItems = parseInt(event.target.value);
+										updateItemCount(numberOfItems, item.id);
+										setItemPrice(item.price * numberOfItems);
+									}}>
+									{numbersArr.map(num => 
+										 (
 											<option value={num} key={num}>
 												{num}
 											</option>
-										);
-									})} */}
+										)
+									)}
 								</select>
-								<button className={`btn ${style['remove-btn']}`}>{<FaTrashCan size={20} />}</button>
+								<button
+									className={`btn ${style['remove-btn']}`}
+									onClick={() => {
+										removeItemHandler(item.id);
+									}}>
+									{<FaTrashCan size={20} />}
+								</button>
 							</div>
 						);
 					})}
-
 				</div>
-                {itemsInCart.length !== 0 && <p className={style['total-price']}>Total price: <span>${totalPrice}</span></p>}
-					{itemsInCart.length !== 0 && <button className={`btn ${style['checkout-btn']}`}>Checkout</button>}
+				{itemsInCart.length !== 0 && (
+					<p className={style['total-price']}>
+						Total price: <span>${totalPrice}</span>
+					</p>
+				)}
+				{itemsInCart.length !== 0 && <button className={`btn ${style['checkout-btn']}`}>Checkout</button>}
 			</div>
 		</div>
 	);
