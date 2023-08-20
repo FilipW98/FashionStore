@@ -8,14 +8,13 @@ import { Items } from '../../App';
 interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
 	itemsInCart: Items[];
+	totalPrice:number;
 }
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) => {
-	console.log(itemsInCart);
-	console.log('xd');
-	itemsInCart.forEach(item => {
-		console.log('Image:', item.image);
-	});
+const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart,totalPrice }) => {
+
+
+
 	return (
 		<div
 			className={style['cart-shadow']}>
@@ -30,7 +29,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) =
 						<FaRegCircleXmark  size={29} />
 					</button>
 				</div>
-				<div className={style['cart-items']}>
+				<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ""}`}>
 					{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
 
 					{itemsInCart.map(item => {
@@ -63,7 +62,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart }) =
 					})}
 
 				</div>
-                {itemsInCart.length !== 0 && <p className={style['total-price']}>Total price: <span>$999</span></p>}
+                {itemsInCart.length !== 0 && <p className={style['total-price']}>Total price: <span>${totalPrice}</span></p>}
 					{itemsInCart.length !== 0 && <button className={`btn ${style['checkout-btn']}`}>Checkout</button>}
 			</div>
 		</div>

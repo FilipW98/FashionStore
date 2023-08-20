@@ -52,6 +52,7 @@ function App() {
 
 	const [isCart, setIsCart] = useState(false);
 	const [itemsInCart, setItems] = useState<Items[]>([]);
+	const [totalPrice, setTotalPrice] = useState(0);
 
 	const cartHandler = () => {
 		setIsCart(true);
@@ -62,12 +63,13 @@ function App() {
 			...item,
 			count: 1,
 		};
+		setTotalPrice(totalPrice + item.price)
 		setItems([...itemsInCart, newItem]);
 	};
 
 	return (
 		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
-			{isCart && <ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} />}
+			{isCart && <ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} totalPrice={totalPrice} />}
 			<div className={style.app}>
 				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} />
 				<main className={style.main}>

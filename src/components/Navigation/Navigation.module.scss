@@ -27,7 +27,7 @@
             width: 20px;
             height: 20px;
             right: 10px;
-            top: 30px;
+            top: 35px;
             border-radius: 50%;
             background-color: $secondary-color;
             p{
@@ -68,7 +68,7 @@
 
     .logo {
         margin-right: .2em;
-        width: 30px;
+        width: 33px;
     }
 
     .logo-box{
@@ -77,6 +77,8 @@
         align-items: center;
 
         h2{
+            margin-top: 0.2em;
+            font-size: 1.7rem;
             text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.241);
         }
     }
