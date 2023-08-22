@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import './ShoppingCart.module.scss';
 import { FaRegCircleXmark } from 'react-icons/fa6';
 import { FaTrashCan } from 'react-icons/fa6';
 import style from './ShoppingCart.module.scss';
 import { Items } from '../../App';
-
 interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
 	itemsInCart: Items[];
@@ -12,26 +10,27 @@ interface ShoppingCartProps {
 	setItems: (newItems: Items[]) => void;
 }
 
+
 const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems }) => {
-	const [updatedItemPrice, setItemPrice] = useState(0);
+
 
 	const removeItemHandler = (itemId: number) => {
 		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
 		setItems(newItemsArr);
 	};
 
-	const updateItemCount = (numberOfItems: number, itemId: number) => {
+	const updateItemCount = (itemId: number, newCount: number) => {
 		const updatedItems = itemsInCart.map(item => {
-			if (item.id === itemId) {
-				return {
-					...item,
-					count: numberOfItems,
-				};
-			}
-			return item;
+		  if (item.id === itemId) {
+			return {
+			  ...item,
+			  count: newCount,
+			};
+		  }
+		  return item;
 		});
-		console.log(updatedItems);
-	};
+		setItems(updatedItems);
+	  };
 
 	return (
 		<div className={style['cart-shadow']}>
@@ -56,14 +55,13 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 								<img className={style['cart-img']} alt='shoe' src={item.image} />
 								<div className='item-info'>
 									<h4>{item.name}</h4>
-									<span className='item-price'>${item.price}</span>
+									<span className='item-price'>${item.price * item.count}</span>
 								</div>
 								<select
 									className={style['item-number']}
 									onChange={event => {
-										const numberOfItems = parseInt(event.target.value);
-										updateItemCount(numberOfItems, item.id);
-										setItemPrice(item.price * numberOfItems);
+										const newCount = parseInt(event.target.value);
+										updateItemCount(item.id, newCount);
 									}}>
 									{numbersArr.map(num => 
 										 (
