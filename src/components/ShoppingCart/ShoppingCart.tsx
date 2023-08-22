@@ -12,7 +12,7 @@ interface ShoppingCartProps {
 	setTotalPrice: (newTotalPrice: number) => void;
 }
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems,setTotalPrice }) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems, setTotalPrice }) => {
 	const removeItemHandler = (itemId: number) => {
 		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
 		setItems(newItemsArr);
@@ -29,6 +29,12 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 			return item;
 		});
 		setItems(updatedItems);
+
+		let newTotalPrice = 0;
+		updatedItems.forEach(item => {
+			newTotalPrice = newTotalPrice + item.price * item.count
+		});
+		  setTotalPrice(newTotalPrice);
 	};
 
 	return (
@@ -37,8 +43,12 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 				<div>
 					<div className={style.header}>
 						<h2>Shopping cart</h2>
-						<Button	onClick={() => {setIsCart(false)}}>
-						</Button>
+						<Button
+							onClick={() => {
+								setIsCart(false);
+							}}>
+
+							</Button>
 					</div>
 					<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ''}`}>
 						{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
@@ -57,9 +67,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 										onChange={event => {
 											const newCount = parseInt(event.target.value);
 											updateItemCount(item.id, newCount);
-											const newTotalPrice = totalPrice + item.price * newCount;
-											setTotalPrice(newTotalPrice);
-										}}>
+										}}
+											value={item.count}
+										>
 										{numbersArr.map(num => (
 											<option value={num} key={num}>
 												{num}
