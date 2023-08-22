@@ -86,7 +86,7 @@ function App() {
 	return (
 		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
 			{isCart && (
-				<ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} totalPrice={totalPrice} setItems={setItems} />
+				<ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} totalPrice={totalPrice} setItems={setItems} setTotalPrice={setTotalPrice} />
 			)}
 			{addItemError && <AddItemError setItemError={setItemError}/>}
 				<div className={style.app}>
