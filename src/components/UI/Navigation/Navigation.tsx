@@ -7,15 +7,19 @@ import { Items } from '../../../App';
 interface NavigationProps {
 	cartHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	itemsInCart: Items[];
+	setUnavaliableFeature: (isFeature: boolean) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart }) => {
+const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart,setUnavaliableFeature }) => {
+
+
+
 	return (
 		<div className={style.navbar__container}>
 			<div className={style.navbar__categories}>
-				<button>Clothes</button>
+				<button onClick={() => {setUnavaliableFeature(true)}}>Clothes</button>
 				<button className={style.active}>Shoes</button>
-				<button>Accessories</button>
+				<button onClick={() => {setUnavaliableFeature(true)}}>Accessories</button>
 			</div>
 			<div className={style.navbar}>
 				<div className={style['logo-box']}>
@@ -30,8 +34,8 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart }) => 
 							<p>{itemsInCart.length}</p>
 						</div>
 					</button>
-					<button className={style['shopping-cart-btn']}>
-						<FaScrewdriverWrench className={style.icon} size={25} />
+					<button className={style['shopping-cart-btn']} onClick={() => {setUnavaliableFeature(true)}}>
+						<FaScrewdriverWrench className={style.icon} size={25}  />
 					</button>
 				</div>
 			</div>

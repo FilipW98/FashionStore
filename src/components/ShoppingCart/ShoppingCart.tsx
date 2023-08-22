@@ -2,7 +2,7 @@ import './ShoppingCart.module.scss';
 import { FaTrashCan } from 'react-icons/fa6';
 import style from './ShoppingCart.module.scss';
 import { Items } from '../../App';
-import Button from '../UI/Buttons/ExitButton/Button';
+import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
 interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
@@ -32,9 +32,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 
 		let newTotalPrice = 0;
 		updatedItems.forEach(item => {
-			newTotalPrice = newTotalPrice + item.price * item.count
+			newTotalPrice = newTotalPrice + item.price * item.count;
 		});
-		  setTotalPrice(newTotalPrice);
+		setTotalPrice(newTotalPrice);
 	};
 
 	return (
@@ -43,12 +43,11 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 				<div>
 					<div className={style.header}>
 						<h2>Shopping cart</h2>
-						<Button
+						<ExitButton
 							onClick={() => {
 								setIsCart(false);
 							}}>
-
-							</Button>
+							</ExitButton>
 					</div>
 					<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ''}`}>
 						{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
@@ -68,8 +67,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 											const newCount = parseInt(event.target.value);
 											updateItemCount(item.id, newCount);
 										}}
-											value={item.count}
-										>
+										value={item.count}>
 										{numbersArr.map(num => (
 											<option value={num} key={num}>
 												{num}

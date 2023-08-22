@@ -1,6 +1,7 @@
 import style from './AddItemError.module.scss';
-import Button from '../UI/Buttons/ExitButton/Button';
-import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
+import ExitButton from '../../UI/Buttons/ExitButton/ExitButton';
+import ConfirmButton from '../../UI/Buttons/ConfirmButton/ConfirmButton';
+import Card from "../../UI/Card/Card";
 
 interface AddItemErrorProps {
 	setItemError: (newIsCartValue: boolean) => void;
@@ -8,24 +9,26 @@ interface AddItemErrorProps {
 
 const AddItemError: React.FC<AddItemErrorProps> = ({ setItemError }) => {
 	return (
-		<div>
+		
 			<div className={style['error-shadow']}>
-				<div className={style['error-box']}>
-					<Button
+				<Card className={style['error-box']}>
+					<ExitButton
 						onClick={() => {
 							setItemError(false);
 						}}>
-							
-						</Button>
+						</ExitButton>
 					<div>
 						<p>This item is already in the cart!</p>
-						<ConfirmButton onClick={() => {
-							setItemError(false);
-						}}>Okay</ConfirmButton>
+						<ConfirmButton
+							onClick={() => {
+								setItemError(false);
+							}}>
+							Okay
+						</ConfirmButton>
 					</div>
-				</div>
+				</Card>
 			</div>
-		</div>
+		
 	);
 };
 
