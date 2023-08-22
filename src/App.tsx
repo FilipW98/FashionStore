@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import style from './App.module.scss';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import Navigation from './components/Navigation/Navigation';
+import Navigation from './components/UI/Navigation/Navigation';
+import AddItemError from './components/AddItemError/AddItemError';
 
 export interface Items {
 	id: number;
 	name: string;
 	price: number;
 	image: any;
-	count: number,
+	count: number;
 }
 
 function App() {
@@ -60,31 +61,42 @@ function App() {
 	const [isCart, setIsCart] = useState(false);
 	const [itemsInCart, setItems] = useState<Items[]>([]);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [addItemError, setItemError] = useState(false);
 
 	const cartHandler = () => {
 		setIsCart(true);
 	};
 
 	const addItemsToCart = (item: Items) => {
+		const itemExists = itemsInCart.some(cartItem => cartItem.id === item.id);
+
+		if (itemExists) {
+			setItemError(true);
+			return;
+		}
+
 		const newItem = {
 			...item,
 			count: 1,
 		};
-		setTotalPrice(totalPrice + item.price)
+		setTotalPrice(totalPrice + item.price);
 		setItems([...itemsInCart, newItem]);
 	};
 
 	return (
 		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
-			{isCart && <ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} totalPrice={totalPrice} setItems={setItems} />}
-			<div className={style.app}>
+			{isCart && (
+				<ShoppingCart setIsCart={setIsCart} itemsInCart={itemsInCart} totalPrice={totalPrice} setItems={setItems} />
+			)}
+			{addItemError && <AddItemError setItemError={setItemError}/>}
+				<div className={style.app}>
 				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} />
 				<main className={style.main}>
 					<div className={style['title-box']}>
-					<h3 className={style.title}>Shoes</h3>
-					<div className={style.underline}></div>
+						<h3 className={style.title}>Shoes</h3>
+						<div className={style.underline}></div>
 					</div>
-					
+
 					<div className={style.items}>
 						{items.map(item => {
 							return (

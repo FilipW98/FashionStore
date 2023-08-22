@@ -1,0 +1,15 @@
+.button {
+	position: absolute;
+	right: 0em;
+	top: 0em;
+	padding: 0.3em;
+	margin: 0.5em;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: 0.3s;
+}
+
+.button:hover {
+	transform: scale(1.1);
+}

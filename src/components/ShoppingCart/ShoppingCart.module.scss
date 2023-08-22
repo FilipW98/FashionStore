@@ -20,7 +20,7 @@
 	z-index: 10;
 
 	.header {
-		position: relative;
+		// position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -33,18 +33,18 @@
 			border-bottom: 4px solid $secondary-color;
 		}
 
-		.close-btn {
-			right: -1em;
-			top: -1em;
-			position: absolute;
-			background-color: transparent;
-			border: none;
-			margin-left: 1em;
-			transition: 0.3s;
-		}
-		.close-btn:hover{
-			transform: scale(1.1);
-		}
+		// .close-btn {
+		// 	right: -1em;
+		// 	top: -1em;
+		// 	position: absolute;
+		// 	margin-left: 1em;
+		// 	// background-color: transparent;
+		// 	// border: none;
+		// 	// transition: 0.3s;
+		// }
+		// .close-btn:hover{
+		// 	transform: scale(1.1);
+		// }
 	}
 	.no-border {
 		border: none !important ;

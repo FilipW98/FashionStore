@@ -1,8 +1,9 @@
 import './ShoppingCart.module.scss';
-import { FaRegCircleXmark } from 'react-icons/fa6';
+// import { FaRegCircleXmark } from 'react-icons/fa6';
 import { FaTrashCan } from 'react-icons/fa6';
 import style from './ShoppingCart.module.scss';
 import { Items } from '../../App';
+import Button from '../UI/Buttons/Button';
 interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
 	itemsInCart: Items[];
@@ -10,10 +11,7 @@ interface ShoppingCartProps {
 	setItems: (newItems: Items[]) => void;
 }
 
-
 const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems }) => {
-
-
 	const removeItemHandler = (itemId: number) => {
 		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
 		setItems(newItemsArr);
@@ -21,29 +19,29 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 
 	const updateItemCount = (itemId: number, newCount: number) => {
 		const updatedItems = itemsInCart.map(item => {
-		  if (item.id === itemId) {
-			return {
-			  ...item,
-			  count: newCount,
-			};
-		  }
-		  return item;
+			if (item.id === itemId) {
+				return {
+					...item,
+					count: newCount,
+				};
+			}
+			return item;
 		});
 		setItems(updatedItems);
-	  };
+	};
 
 	return (
 		<div className={style['cart-shadow']}>
 			<div className={style.shoppingCart}>
 				<div className={style.header}>
 					<h2>Shopping cart</h2>
-					<button
-						className={`btn ${style['close-btn']}`}
+					<Button
+						// className={style['close-btn']}
 						onClick={() => {
 							setIsCart(false);
 						}}>
-						<FaRegCircleXmark size={29} />
-					</button>
+						{/* <FaRegCircleXmark size={29} /> */}
+					</Button>
 				</div>
 				<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ''}`}>
 					{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
@@ -63,13 +61,11 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 										const newCount = parseInt(event.target.value);
 										updateItemCount(item.id, newCount);
 									}}>
-									{numbersArr.map(num => 
-										 (
-											<option value={num} key={num}>
-												{num}
-											</option>
-										)
-									)}
+									{numbersArr.map(num => (
+										<option value={num} key={num}>
+											{num}
+										</option>
+									))}
 								</select>
 								<button
 									className={`btn ${style['remove-btn']}`}
