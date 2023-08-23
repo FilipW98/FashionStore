@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cb9a2d56.css",
+    "main.js": "/static/js/main.e0fe66e6.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/gray-shoe.png": "/static/media/gray-shoe.d166ffd4a7ebdb8344be.png",
+    "static/media/big-shoe.png": "/static/media/big-shoe.49d5f621c90efa6bf875.png",
+    "static/media/puma.png": "/static/media/puma.b88aa456e1888b14fe30.png",
+    "static/media/nike-air-force.png": "/static/media/nike-air-force.718abc540e169ce1bf62.png",
+    "static/media/black-nike2.png": "/static/media/black-nike2.0d5c2cf2dc2b358c3b4d.png",
+    "static/media/black-nike.png": "/static/media/black-nike.b1bbeda0810a0e7c7c93.png",
+    "index.html": "/index.html",
+    "main.cb9a2d56.css.map": "/static/css/main.cb9a2d56.css.map",
+    "main.e0fe66e6.js.map": "/static/js/main.e0fe66e6.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb9a2d56.css",
+    "static/js/main.e0fe66e6.js"
+  ]
+}
