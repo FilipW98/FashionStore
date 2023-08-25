@@ -1,6 +1,6 @@
 <div align="center">
 <h1> ShoppingCart </h1>
-##   <div align="center" ><a href="https://github.com/FilipW98/ShoppingCart" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40" /> </a>  </div>
+<div align="center" ><a href="https://github.com/FilipW98/ShoppingCart" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40" /> </a>  </div>
 </div>
 
 
