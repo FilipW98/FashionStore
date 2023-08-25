@@ -6,7 +6,7 @@
 This project represents an online store where you can add selected items to your shopping cart. Then You can go to the cart, where You can add more items or remove them. The cart also shows the total price of all products added to it.
 </div>
 
-## <div align="center" ><a href="https://github.com/FilipW98/ShoppingCart" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
+## <div align="center" ><a href="https://filipw98.github.io/ShoppingCart/" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
 
 ## Tech Stack
 
