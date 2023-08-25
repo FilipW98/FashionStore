@@ -15,7 +15,7 @@ This project represents an online store where you can add selected items to your
 <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" alt="React icon" width="47" height="47"/> </a> 
 <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sass.svg" alt="Sass icon" width="47" height="47"/> </a> 
 
-## Features
+### Features
 
 - Adding products to the shopping cart
 - Selecting the number of items by using select
