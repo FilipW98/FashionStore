@@ -1,5 +1,5 @@
 <div align="center">
-<h1> ShoppingCartt </h1>
+<h1> ShoppingCart </h1>
 </div>
 
 
