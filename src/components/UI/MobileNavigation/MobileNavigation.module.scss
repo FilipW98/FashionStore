@@ -2,83 +2,97 @@
 
 .mobileNav {
 	position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: #e1e2d8;
+	background-color: #fff;
+	// background-color: #767676;
 	z-index: 2;
 
-    .mobileNav-btn{
-        padding: 1em;
-        margin: 2em;
-    }
+	.mobileNav-btn {
+		padding: 1em;
+		margin: 2em;
+	}
 
-    .logo {
+	.logo {
 		width: 43px;
-        margin-right: 5px;
+		margin-right: 5px;
 	}
 
 	.logo-box {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-        margin-bottom: 6em;
+		margin-bottom: 6em;
 
 		h2 {
 			margin-top: 0.2em;
 			font-size: 2.5rem;
-			text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.241);
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.241);
+			border-bottom: 5px solid $secondary-color;
 		}
 	}
 
-    .active {
-        border-bottom: 4px solid $secondary-color !important;
-    }
+	.active {
+		background-color: $secondary-color;
+	}
 
-    .btn-box{
-        display: flex;
-         flex-direction: column;
-        button {
-            margin-top: 1em;
-            padding: 1em;
-            font-size: 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: $background-item;
-            color: rgba(255, 255, 255, 0.896);
-        }
-
-    }
-
+	.btn-box {
+		display: flex;
+		flex-direction: column;
+		button {
+			margin-top: 1em;
+			padding: 1em;
+			font-size: 1.5rem;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: $background-item;
+			color: rgba(255, 255, 255, 0.896);
+		}
+	}
 }
 
-
 @media (max-width: 576px) {
+	.mobileNav {
+		.logo-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 6em;
 
-    .mobileNav{
-        .logo-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 6em;
-    
-            h2 {
-                margin-top: 0.2em;
-                font-size: 1.7rem;
+			h2 {
+				margin-top: 0.2em;
+				font-size: 1.7rem;
+			}
+		}
+
+		.btn-box {
+			button {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	
+		.mobileNav {
+			.logo-box {
+				margin-bottom: 2em;
+			}
+
+			.shopping-cart-btn {
+				padding: 1.4em 1em;
+			}
+            .mobileNav-btn{
+                margin: 0;
             }
-        }
-
-        .btn-box{
-            button {
-                font-size: 1.2rem;
-            }    
-        }
-    }
-
+		}
+	
 }

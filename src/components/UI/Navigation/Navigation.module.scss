@@ -96,6 +96,7 @@
 	}
 
 	.icons-box {
+        display: flex;
 		margin-right: 2em;
         z-index: 0;
 	}
@@ -148,8 +149,25 @@
 
 @media (max-width: 576px) {
 
+    .logo-box{
+        margin-left: 0em;
+    }
     .navbar{
         width: auto;
+    }
+
+}
+
+@media (max-width:450px){
+
+    .navbar{
+        .shopping-cart-btn{
+        padding: 1.4em 1em;
+    }
+}
+
+    .icon{
+        width: 17px;
     }
 
 }
