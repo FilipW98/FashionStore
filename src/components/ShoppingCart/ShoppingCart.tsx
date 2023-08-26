@@ -44,6 +44,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 					<div className={style.header}>
 						<h2>Shopping cart</h2>
 						<ExitButton
+						className={style.button} size={29}
 							onClick={() => {
 								setIsCart(false);
 							}}>

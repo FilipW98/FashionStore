@@ -1,100 +1,155 @@
-@import "../../../colors";
+@import '../../../colors';
 
 .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    line-height: 65px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.225);
+	display: flex;
+	justify-content: space-between;
+	line-height: 65px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.225);
+    z-index: 0;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 57%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 57%;
 
-    .shopping-cart-btn {
-        position: relative;
-        padding: 1.8em;
-        background-color: transparent;
-        border: none;
+	.shopping-cart-btn {
+		position: relative;
+		padding: 1.8em;
+		background-color: transparent;
+		border: none;
 
-        .counter{
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 20px;
-            height: 20px;
-            right: 10px;
-            top: 35px;
-            border-radius: 50%;
-            background-color: $secondary-color;
-            p{
-                color: #fff;
-                font-size: .7rem;
+		.counter {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 20px;
+			height: 20px;
+			right: 10px;
+			top: 35px;
+			border-radius: 50%;
+			background-color: $secondary-color;
+			p {
+				color: #fff;
+				font-size: 0.7rem;
+			}
+		}
+	}
+	.shopping-cart-btn:hover {
+		background-color: $background-item;
+	}
+	.shopping-cart-btn:hover .icon {
+		color: rgba(255, 255, 255, 0.896);
+	}
+
+	&__categories {
+		display: flex;
+		width: 30%;
+		margin-left: 3em;
+		cursor: pointer;
+
+		button {
+			font-size: 1rem;
+			border: none;
+			padding: 0 1em;
+			background-color: transparent;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: $background-item;
+			color: rgba(255, 255, 255, 0.896);
+		}
+
+		.active {
+			border-bottom: 3px solid $secondary-color;
+		}
+	}
+
+	.logo {
+		margin-right: 0.2em;
+		width: 33px;
+	}
+
+	.logo-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h2 {
+			margin-top: 0.2em;
+			font-size: 1.7rem;
+			text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.241);
+		}
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	.icon {
+		color: #000000c3;
+	}
+	.icon:hover {
+		color: #fff;
+	}
+
+	.icons-box {
+		margin-right: 2em;
+        z-index: 0;
+	}
+
+}
+.burgerBtn {
+    display: none;
+}
+
+@media (max-width: 992px) {
+	.navbar__container {
+		justify-content: space-around;
+		align-items: center;
+	}
+	.burgerBtn {
+    display: block;
+	cursor: pointer;
+	}
+
+	.navbar__categories {
+		display: none;
+	}
+    .logo-box{
+        margin-left: 2.5em;
+    }
+}
+
+@media (max-width: 768px){
+
+    .navbar{
+        .icons-box {
+            margin-right: 0em;
+        }
+        .logo-box {
+
+            h2 {
+                font-size: 1.2rem;
             }
         }
     }
-    .shopping-cart-btn:hover {
-        background-color: $background-item;
-    }
-    .shopping-cart-btn:hover .icon {
-        color: rgba(255, 255, 255, 0.896);
-    }
+   .icon{
+    width: 20px;
+   }
 
-    &__categories {
-        display: flex;
-        width: 30%;
-        margin-left: 3em;
-        cursor: pointer;
+   .logo-box{
+    margin-left: 2em;
+}
+}
 
-        button {
-            font-size: 1rem;
-            border: none;
-            padding: 0 1em;
-            background-color: transparent;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: $background-item;
-            color: rgba(255, 255, 255, 0.896);
-        }
 
-        .active{
-            border-bottom: 3px solid $secondary-color;
-        }
+@media (max-width: 576px) {
+
+    .navbar{
+        width: auto;
     }
 
-    .logo {
-        margin-right: .2em;
-        width: 33px;
-    }
-
-    .logo-box{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h2{
-            margin-top: 0.2em;
-            font-size: 1.7rem;
-            text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.241);
-        }
-    }
-
-    button {
-        cursor: pointer;
-    }
-
-    .icon {
-        color: #000000c3;
-    }
-    .icon:hover {
-        color: #fff;
-    }
-
-    .icons-box {
-        margin-right: 2em;
-    }
 }

@@ -12,7 +12,7 @@ const UnavailableFeature: React.FC<UnavailableFeatureProps> = ({ setUnavaliableF
 	return (
 		<div className={style['box-shadow']}>
 			<Card className={style['box']}>
-				<ExitButton
+				<ExitButton className={style.button} size={29}
 					onClick={() => {
 						setUnavaliableFeature(false)
 					}}>

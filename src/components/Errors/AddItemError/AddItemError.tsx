@@ -12,7 +12,7 @@ const AddItemError: React.FC<AddItemErrorProps> = ({ setItemError }) => {
 		
 			<div className={style['error-shadow']}>
 				<Card className={style['error-box']}>
-					<ExitButton
+					<ExitButton className={style.button} size={29}
 						onClick={() => {
 							setItemError(false);
 						}}>

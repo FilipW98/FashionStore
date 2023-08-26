@@ -4,6 +4,7 @@ import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navigation from './components/UI/Navigation/Navigation';
 import AddItemError from './components/Errors/AddItemError/AddItemError';
 import UnavaliableFeature from './components/Errors/UnavaliableFeature/UnavailableFeature';
+import MobileNavigation from "./components/UI/MobileNavigation/MobileNavigation";
 
 export interface Items {
 	id: number;
@@ -64,6 +65,7 @@ function App() {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [addItemError, setItemError] = useState(false);
 	const [unvaliableFeature, setUnavaliableFeature] = useState(false);
+	const [isMobileNav, setMobileNav] = useState(false);
 
 	const cartHandler = () => {
 		setIsCart(true);
@@ -98,10 +100,11 @@ function App() {
 					setTotalPrice={setTotalPrice}
 				/>
 			)}
+		{isMobileNav &&  <MobileNavigation setUnavaliableFeature={setUnavaliableFeature} setMobileNav={setMobileNav}/>}	
 			{addItemError && <AddItemError setItemError={setItemError} />}
 			{unvaliableFeature && <UnavaliableFeature setUnavaliableFeature={setUnavaliableFeature}/>}
 			<div className={style.app}>
-				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} setUnavaliableFeature={setUnavaliableFeature} />
+				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} setUnavaliableFeature={setUnavaliableFeature} setMobileNav={setMobileNav}/>
 				<main className={style.main}>
 					<div className={style['title-box']}>
 						<h3 className={style.title}>Shoes</h3>
