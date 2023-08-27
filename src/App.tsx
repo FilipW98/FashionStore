@@ -87,10 +87,10 @@ function App() {
 		setItems([...itemsInCart, newItem]);
 	};
 
-	
+	const containerClassName = isCart ? style['overflow-hidden'] : style[''];	
 
 	return (
-		<div className={isCart ? style['overflow-hidden'] : style['overflow-scroll']}>
+		<div className={`${style.container} ${containerClassName}`}>
 			{isCart && (
 				<ShoppingCart
 					setIsCart={setIsCart}

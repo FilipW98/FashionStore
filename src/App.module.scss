@@ -1,5 +1,10 @@
 @import './_colors.scss';
 
+.container{
+	max-width: 2200px;
+	margin: 0 auto;
+}
+
 .overflow-hidden {
 	overflow-y: hidden;
 }

@@ -23,11 +23,11 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart,setUna
 				<button className={style.active}>Shoes</button>
 				<button onClick={() => {setUnavaliableFeature(true)}}>Accessories</button>
 			</div>
-			<div className={style.navbar}>
 				<div className={style['logo-box']}>
 					<img className={style.logo} src={hangerImage} alt='hanger' />
 					<h2>FashionStore</h2>
 				</div>
+			{/* <div className={style.navbar}> */}
 
 				<div className={style['icons-box']}>
 					<button className={style['shopping-cart-btn']} onClick={cartHandler}>
@@ -40,7 +40,7 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart,setUna
 						<FaScrewdriverWrench className={style.icon} size={25}  />
 					</button>
 				</div>
-			</div>
+			{/* </div> */}
 		</div>
 	);
 };
