@@ -1,6 +1,6 @@
-@import "./_colors.scss";
+@import './_colors.scss';
 
-.overflow-hidden{
+.overflow-hidden {
 	overflow-y: hidden;
 }
 .app {
@@ -14,16 +14,16 @@
 		padding: 2em 1em;
 		background-color: $primary-color;
 
-		.title-box{
+		.title-box {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			margin-bottom: 1em;
 
-			.underline{
+			.underline {
 				width: 10%;
 				height: 5px;
-				margin-top: .2em;
+				margin-top: 0.2em;
 				background-color: $secondary-color;
 			}
 		}
@@ -51,21 +51,21 @@
 					background-color: $primary-color;
 				}
 
-				.add-btn{
+				.add-btn {
 					border: none;
-					padding: .6em;
-					margin: 1em 0em .4em;
+					padding: 0.6em;
+					margin: 1em 0em 0.4em;
 					border-radius: 8px;
-					transition: .3s ;
+					transition: 0.3s;
 					background-color: #fff;
 				}
 
-				.add-btn:hover{
+				.add-btn:hover {
 					background-color: $secondary-color;
 					transform: scale(1.1);
 				}
 
-				.item-data{
+				.item-data {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
@@ -73,9 +73,74 @@
 					padding: 1em 0.5em;
 					color: #fff;
 					background-color: $background-item;
-					
-					.item-name{
+
+					.item-name {
 						margin-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.item-name {
+		font-size: 0.8rem;
+	}
+}
+@media (max-width: 768px) {
+	.app {
+		.main {
+			padding:  2em 0em;
+			.items {
+				.item {
+					width: 31%;
+					
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.app {
+		.main {
+			.items {
+				padding: 0;
+				.item {
+					width: 31%;
+					.item-name {
+						font-size: 0.7rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.app {
+		.main {
+			.items {
+				.item {
+					width: 45%;
+					.item-name {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.app {
+		.main {
+			.items {
+				.item {
+					width: 75%;
+					.item-name {
+						font-size: 1rem;
 					}
 				}
 			}

@@ -84,3 +84,19 @@
 		margin-bottom: 2em;
 	}
 }
+
+
+@media(max-width: 576px){
+
+	.shoppingCart{
+		width: 85%;
+	}
+}
+
+@media(max-width: 450px){
+
+	.shoppingCart{
+		width: 95%;
+		padding: 1.5em .8em;
+	}
+}
