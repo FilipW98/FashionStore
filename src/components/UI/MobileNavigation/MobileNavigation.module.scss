@@ -9,8 +9,10 @@
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
-	// background-color: #767676;
 	z-index: 2;
+	animation: ToggleMobileNav 1s;
+	// transition: width 0.3s ease;
+	
 
 	.mobileNav-btn {
 		padding: 1em;
@@ -56,7 +58,23 @@
 			color: rgba(255, 255, 255, 0.896);
 		}
 	}
+
+
 }
+
+@keyframes ToggleMobileNav {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+
 
 @media (max-width: 576px) {
 	.mobileNav {

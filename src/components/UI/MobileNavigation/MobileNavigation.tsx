@@ -17,30 +17,36 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({ setUnavaliableFeatur
 				}}
 				size={45}>
 
-                </ExitButton>
+				</ExitButton>
 
-			<div className={style['logo-box']}>
-				<img className={style.logo} src={hangerImage} alt='hanger' />
-				<h2>FashionStore</h2>
-			</div>
+			<div className={style['mobile-nav-box']}>
+				<div className={style['logo-box']}>
+					<img className={style.logo} src={hangerImage} alt='hanger' />
+					<h2>FashionStore</h2>
+				</div>
 
-			<div className={style['btn-box']}>
-				{' '}
-				<button
-					onClick={() => {
-						setUnavaliableFeature(true);
-					}}>
-					Clothes
-				</button>
-				<button className={style.active} onClick={() => {
-					setMobileNav(false);
-				}}>Shoes</button>
-				<button
-					onClick={() => {
-						setUnavaliableFeature(true);
-					}}>
-					Accessories
-				</button>
+				<div className={style['btn-box']}>
+					{' '}
+					<button
+						onClick={() => {
+							setUnavaliableFeature(true);
+						}}>
+						Clothes
+					</button>
+					<button
+						className={style.active}
+						onClick={() => {
+							setMobileNav(false);
+						}}>
+						Shoes
+					</button>
+					<button
+						onClick={() => {
+							setUnavaliableFeature(true);
+						}}>
+						Accessories
+					</button>
+				</div>
 			</div>
 		</div>
 	);
