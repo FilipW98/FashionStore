@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './MobileNavigation.module.scss';
 import ExitButton from '../Buttons/ExitButton/ExitButton';
 import hangerImage from '../../../assets/img/clothes-hanger.png';
@@ -8,12 +9,22 @@ interface MobileNavigationProp {
 }
 
 const MobileNavigation: React.FC<MobileNavigationProp> = ({ setUnavaliableFeature, setMobileNav }) => {
+
+	const [closing, setClosing] = useState(false);
+
+    const handleCloseNav = () => {
+		setClosing(true);
+		setTimeout(() => {
+            setMobileNav(false); // Ukrycie nawigacji po zakończeniu animacji
+        }, 500);
+	}
+    
 	return (
-		<div className={style.mobileNav}>
+		<div className={`${style.mobileNav} ${closing ? style.closing : ''}`}>
 			<ExitButton
 				className={style['mobileNav-btn']}
 				onClick={() => {
-					setMobileNav(false);
+					handleCloseNav();
 				}}
 				size={45}>
 
