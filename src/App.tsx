@@ -87,10 +87,11 @@ function App() {
 		setItems([...itemsInCart, newItem]);
 	};
 
-	const containerClassName = isCart ? style['overflow-hidden'] : style[''];	
+	
+	const overflowClass = (isCart || isMobileNav) ? style['overflow-hidden'] : '';
 
 	return (
-		<div className={`${style.container} ${containerClassName}`}>
+		<div className={`${style.container} ${overflowClass}`}>
 			{isCart && (
 				<ShoppingCart
 					setIsCart={setIsCart}
