@@ -10,7 +10,7 @@ export interface Items {
 	id: number;
 	name: string;
 	price: number;
-	image: any;
+	image: string;
 	count: number;
 }
 
