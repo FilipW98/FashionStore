@@ -27,7 +27,6 @@ This project represents an online store where you can add selected items to your
 
 To run this project, you must have the following dependencies installed:
 - Node.js and NPM (https://nodejs.org)
-- Vite (https://vitejs.dev)
 - Git (https://git-scm.com)
 
 The project has no specific requirements for Node.js and NPM versions, but I recommend using the latest stable versions to avoid compatibility issues.
