@@ -4,15 +4,17 @@ import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench } from 'react-icons/fa6';
 import { FaBars } from 'react-icons/fa6';
 import { Items } from '../../../App';
+import { ErrorInfo } from "../../../App";
 
 interface NavigationProps {
 	cartHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	itemsInCart: Items[];
-	setUnavaliableFeature: (isFeature: boolean) => void;
 	setMobileNav: (isMobileNav: boolean) => void;
+	setError: (errorText: ErrorInfo) => void;
+	setPopup: (isPopup: boolean) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setUnavaliableFeature, setMobileNav }) => {
+const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMobileNav, setError, setPopup }) => {
 	return (
 		<div className={style.navbar__container}>
 			<FaBars
@@ -25,14 +27,20 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setUn
 			<div className={style.navbar__categories}>
 				<button
 					onClick={() => {
-						setUnavaliableFeature(true);
+						setPopup(true);
+						setError({
+							text: "This feature is unavaliable."
+						})
 					}}>
 					Clothes
 				</button>
 				<button className={style.active}>Shoes</button>
 				<button
 					onClick={() => {
-						setUnavaliableFeature(true);
+						setPopup(true);
+						setError({
+							text: "This feature is unavaliable."
+						})
 					}}>
 					Accessories
 				</button>
@@ -52,7 +60,10 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setUn
 				<button
 					className={style['shopping-cart-btn']}
 					onClick={() => {
-						setUnavaliableFeature(true);
+						setPopup(true);
+						setError({
+							text: "This feature is unavaliable."
+						})
 					}}>
 					<FaScrewdriverWrench className={style.icon} size={25} />
 				</button>

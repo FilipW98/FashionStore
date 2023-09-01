@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import style from './MobileNavigation.module.scss';
 import ExitButton from '../Buttons/ExitButton/ExitButton';
 import hangerImage from '../../../assets/img/clothes-hanger.png';
+import {ErrorInfo} from '../../../App';
 
 interface MobileNavigationProp {
-	setUnavaliableFeature: (isFeature: boolean) => void;
 	setMobileNav: (isMobileNav: boolean) => void;
+	setError: (errorText: ErrorInfo) => void;
+	setPopup: (isPopup: boolean) => void;
 }
 
-const MobileNavigation: React.FC<MobileNavigationProp> = ({ setUnavaliableFeature, setMobileNav }) => {
+const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup }) => {
 
 	const [closing, setClosing] = useState(false);
 
     const handleCloseNav = () => {
 		setClosing(true);
 		setTimeout(() => {
-            setMobileNav(false); // Ukrycie nawigacji po zakończeniu animacji
+            setMobileNav(false);
         }, 500);
 	}
     
@@ -40,7 +42,11 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({ setUnavaliableFeatur
 					{' '}
 					<button
 						onClick={() => {
-							setUnavaliableFeature(true);
+							setPopup(true);
+							setError({
+							text: "This feature is unavaliable."
+						})
+
 						}}>
 						Clothes
 					</button>
@@ -53,7 +59,11 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({ setUnavaliableFeatur
 					</button>
 					<button
 						onClick={() => {
-							setUnavaliableFeature(true);
+							setPopup(true);
+							setError({
+							text: "This feature is unavaliable."
+						})
+
 						}}>
 						Accessories
 					</button>

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import style from './App.module.scss';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navigation from './components/UI/Navigation/Navigation';
-import AddItemError from './components/Errors/AddItemError/AddItemError';
-import UnavaliableFeature from './components/Errors/UnavaliableFeature/UnavailableFeature';
-import MobileNavigation from "./components/UI/MobileNavigation/MobileNavigation";
+// import AddItemError from './components/Errors/AddItemError/AddItemError';
+import Popup from './components/Popup/Popup';
+// import UnavaliableFeature from './components/Errors/UnavaliableFeature/UnavailableFeature';
+import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 
 export interface Items {
 	id: number;
@@ -12,6 +13,10 @@ export interface Items {
 	price: number;
 	image: string;
 	count: number;
+}
+
+export interface ErrorInfo {
+	text: string;
 }
 
 function App() {
@@ -63,9 +68,12 @@ function App() {
 	const [isCart, setIsCart] = useState(false);
 	const [itemsInCart, setItems] = useState<Items[]>([]);
 	const [totalPrice, setTotalPrice] = useState(0);
-	const [addItemError, setItemError] = useState(false);
-	const [unvaliableFeature, setUnavaliableFeature] = useState(false);
+	// const [addItemError, setItemError] = useState(false);
+	const [popup, setPopup] = useState(false);
+	// const [unvaliableFeature, setUnavaliableFeature] = useState(false);
 	const [isMobileNav, setMobileNav] = useState(false);
+	const [error, setError] = useState<ErrorInfo>();
+	console.log(error);
 
 	const cartHandler = () => {
 		setIsCart(true);
@@ -75,7 +83,10 @@ function App() {
 		const itemExists = itemsInCart.some(cartItem => cartItem.id === item.id);
 
 		if (itemExists) {
-			setItemError(true);
+			setPopup(true);
+			setError({
+				text: 'This item is already in the cart!',
+			});
 			return;
 		}
 
@@ -87,8 +98,7 @@ function App() {
 		setItems([...itemsInCart, newItem]);
 	};
 
-	
-	const overflowClass = (isCart || isMobileNav) ? style['overflow-hidden'] : '';
+	const overflowClass = isCart || isMobileNav ? style['overflow-hidden'] : '';
 
 	return (
 		<div className={`${style.container} ${overflowClass}`}>
@@ -101,11 +111,17 @@ function App() {
 					setTotalPrice={setTotalPrice}
 				/>
 			)}
-		{isMobileNav &&  <MobileNavigation setUnavaliableFeature={setUnavaliableFeature} setMobileNav={setMobileNav}/>}	
-			{addItemError && <AddItemError setItemError={setItemError} />}
-			{unvaliableFeature && <UnavaliableFeature setUnavaliableFeature={setUnavaliableFeature}/>}
+			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} />}
+			{popup && <Popup setPopup={setPopup} newText={error} />}
+
 			<div className={style.app}>
-				<Navigation cartHandler={cartHandler} itemsInCart={itemsInCart} setUnavaliableFeature={setUnavaliableFeature} setMobileNav={setMobileNav}/>
+				<Navigation
+					cartHandler={cartHandler}
+					itemsInCart={itemsInCart}
+					setMobileNav={setMobileNav}
+					setError={setError}
+					setPopup={setPopup}
+				/>
 				<main className={style.main}>
 					<div className={style['title-box']}>
 						<h3 className={style.title}>Shoes</h3>
