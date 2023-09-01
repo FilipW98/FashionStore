@@ -2,9 +2,7 @@ import { useState } from 'react';
 import style from './App.module.scss';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navigation from './components/UI/Navigation/Navigation';
-// import AddItemError from './components/Errors/AddItemError/AddItemError';
 import Popup from './components/Popup/Popup';
-// import UnavaliableFeature from './components/Errors/UnavaliableFeature/UnavailableFeature';
 import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 
 export interface Items {
