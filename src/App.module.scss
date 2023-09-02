@@ -13,7 +13,6 @@
 	background-color: $primary-color;
 
 	.main {
-
 		margin-top: 4em;
 		padding: 2em 1em;
 		background-color: $primary-color;
@@ -78,62 +77,6 @@
 
 					.item-name {
 						margin-bottom: 1em;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 992px) {
-	.item-name {
-		font-size: 0.8rem;
-	}
-}
-@media (max-width: 768px) {
-	.app {
-		.main {
-			padding:  2em 0em;
-		}
-	}
-}
-
-@media (max-width: 576px) {
-	.app {
-		.main {
-			.items {
-				padding: 0;
-				.item {
-					.item-name {
-						font-size: 0.7rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 450px) {
-	.app {
-		.main {
-			.items {
-				.item {
-					.item-name {
-						font-size: 0.8rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 350px) {
-	.app {
-		.main {
-			.items {
-				.item {
-					.item-name {
-						font-size: 1rem;
 					}
 				}
 			}

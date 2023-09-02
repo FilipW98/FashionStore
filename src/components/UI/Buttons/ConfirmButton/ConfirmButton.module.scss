@@ -3,15 +3,12 @@
 .button{
     width: 30%;
     min-width: 30%;
-    // width: 200px;
-    // max-width: 40%;
     padding: 0.8em;
     margin-top: 1.3em;
     font-size: 1.1rem;
     border-radius: 8px;
     background-color: $secondary-color;
     border: 1px solid rgb(102, 98, 13);
-    transition: 0.3s;
     box-shadow: 1px 1px 1px 1px rgba(69, 57, 27, 0.517);
     cursor: pointer;
     transition: .3s;
