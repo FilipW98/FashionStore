@@ -1,3 +1,4 @@
+import ReactDom from "react-dom";
 import style from './Popup.module.scss';
 import Card from '../UI/Card/Card';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
@@ -11,7 +12,14 @@ interface PopupProps {
 
 const Popup: React.FC<PopupProps> = ({ setPopup, newText }) => {
 	const text = newText ? newText.text : '';
-	return (
+
+	const popupRoot = document.getElementById('popup-root');
+
+	if (!popupRoot) {
+		return null;
+	}
+
+	return  ReactDom.createPortal (
 		<div className={style['error-shadow']}>
 			<Card className={style['error-box']}>
 				<ExitButton
@@ -31,7 +39,8 @@ const Popup: React.FC<PopupProps> = ({ setPopup, newText }) => {
 					</ConfirmButton>
 				</div>
 			</Card>
-		</div>
+		</div>,
+		popupRoot
 	);
 };
 
