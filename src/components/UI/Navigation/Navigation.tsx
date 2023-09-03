@@ -25,7 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMo
 				size={35}
 			/>
 			<div className={style.navbar__categories}>
-				<button
+				<button className={style['category-btn']}
 					onClick={() => {
 						setPopup(true);
 						setError({
@@ -34,8 +34,8 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMo
 					}}>
 					Clothes
 				</button>
-				<button className={style.active}>Shoes</button>
-				<button
+				<button className={`${style.active} ${style['category-btn']}`}>Shoes</button>
+				<button className={style['category-btn']}
 					onClick={() => {
 						setPopup(true);
 						setError({

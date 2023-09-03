@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.225);
-	// z-index: 0;
+	z-index: 0;
 }
 
 .logo {
@@ -61,14 +61,14 @@
 		border-bottom: 3px solid $secondary-color;
 	}
 }
-button {
+.category-btn {
 	font-size: 1rem;
 	border: none;
 	padding: 0 1em;
 	background-color: transparent;
 	cursor: pointer;
 }
-button:hover {
+.category-btn:hover {
 	background-color: $background-item;
 	color: rgba(255, 255, 255, 0.896);
 }

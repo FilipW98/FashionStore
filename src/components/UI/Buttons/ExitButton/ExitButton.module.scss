@@ -1,4 +1,4 @@
-.button {
+.exit-button {
 	position: absolute;
 	right: 0em;
 	top: 0em;
@@ -10,6 +10,6 @@
 	transition: 0.3s;
 }
 
-.button:hover {
+.exit-button:hover {
 	transform: scale(1.1);
 }

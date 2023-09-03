@@ -11,7 +11,7 @@ interface ButtonProps {
 
 const ExitButton: React.FC<ButtonProps> = ({children, onClick,className, size }) => {
 	return (
-		<button className={`${style.button} ${className}`} onClick={onClick}>
+		<button className={`${style['exit-button']} ${className}`} onClick={onClick}>
 			{children}
 			<FaRegCircleXmark size={size} />
 		</button>
