@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ShoppingCart/static/css/main.37081e6d.css",
-    "main.js": "/ShoppingCart/static/js/main.c1d208e5.js",
+    "main.css": "/ShoppingCart/static/css/main.b9360559.css",
+    "main.js": "/ShoppingCart/static/js/main.48f2373a.js",
     "static/media/gray-shoe.png": "/ShoppingCart/static/media/gray-shoe.d166ffd4a7ebdb8344be.png",
     "static/media/big-shoe.png": "/ShoppingCart/static/media/big-shoe.49d5f621c90efa6bf875.png",
     "static/media/puma.png": "/ShoppingCart/static/media/puma.b88aa456e1888b14fe30.png",
@@ -9,11 +9,11 @@
     "static/media/black-nike2.png": "/ShoppingCart/static/media/black-nike2.0d5c2cf2dc2b358c3b4d.png",
     "static/media/black-nike.png": "/ShoppingCart/static/media/black-nike.b1bbeda0810a0e7c7c93.png",
     "index.html": "/ShoppingCart/index.html",
-    "main.37081e6d.css.map": "/ShoppingCart/static/css/main.37081e6d.css.map",
-    "main.c1d208e5.js.map": "/ShoppingCart/static/js/main.c1d208e5.js.map"
+    "main.b9360559.css.map": "/ShoppingCart/static/css/main.b9360559.css.map",
+    "main.48f2373a.js.map": "/ShoppingCart/static/js/main.48f2373a.js.map"
   },
   "entrypoints": [
-    "static/css/main.37081e6d.css",
-    "static/js/main.c1d208e5.js"
+    "static/css/main.b9360559.css",
+    "static/js/main.48f2373a.js"
   ]
 }
