@@ -1,6 +1,5 @@
-// import style from './Shoes.module.scss';
 import ItemsCard from '../../UI/Cards/ItemsCard/ItemsCard';
-import Item from '../../UI/Item/ItemCard/Item';
+import Item from '../../UI/Item/Item';
 import { ShoesProps } from '../../../types/types';
 
 const items = [

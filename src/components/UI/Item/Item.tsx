@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Item.module.scss';
-import { ItemProps } from '../../../../types/types';
+import { ItemProps } from '../../../types/types';
 
 const Item: React.FC<ItemProps> = ({item,onAddToCart}) => {
 	return (
