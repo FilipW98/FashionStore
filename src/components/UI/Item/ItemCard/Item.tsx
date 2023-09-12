@@ -8,7 +8,7 @@ const Item: React.FC<ItemProps> = ({item,onAddToCart}) => {
 			<img className={style['item-img']} alt='shoes' src={item.image} />
 			<div className={style['item-data']}>
 				<h4 className={style['item-name']}>{item.name}</h4>
-				<span className='item-price'>${item.price}</span>
+				<span>${item.price}</span>
 				<button
 					className={`btn ${style['add-btn']}`}
 					onClick={() => {

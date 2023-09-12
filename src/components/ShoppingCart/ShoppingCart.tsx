@@ -55,7 +55,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 									<img className={style['cart-img']} alt='shoe' src={item.image} />
 									<div className='item-info'>
 										<h4>{item.name}</h4>
-										<span className='item-price'>${item.price * item.count}</span>
+										<span>${item.price * item.count}</span>
 									</div>
 									<select
 										className={style['item-number']}
