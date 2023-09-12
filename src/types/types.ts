@@ -48,3 +48,19 @@ export interface NavigationProps {
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
 }
+
+export interface ShoesProps {
+	addItemsToCart: (item: Items) => void;
+} 
+
+export interface ItemProps {
+	item:{
+	  id: number;
+	  name: string;
+	  price: number;
+	  image: string;
+	  count: number;
+	}
+
+	onAddToCart: (item:Items) => void;
+  }

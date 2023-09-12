@@ -1,0 +1,12 @@
+@import "../../../../styles/colors";
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    margin: 0.3em;
+    background-color: $primary-color;
+    border: 3px solid rgba(0, 0, 0, 0.714);
+    box-shadow: 1px 1px 2px 1px rgba(33, 33, 33, 0.591);
+}
