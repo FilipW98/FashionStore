@@ -1,13 +1,8 @@
-import { FaRegCircleXmark } from 'react-icons/fa6';
 import style from './ExitButton.module.scss';
+import { FaRegCircleXmark } from 'react-icons/fa6';
 
+import {ButtonProps} from "../../../../types/types";
 
-interface ButtonProps {
-	children: React.ReactNode;
-	onClick: () => void;
-	className: string;
-	size: number;
-}
 
 const ExitButton: React.FC<ButtonProps> = ({children, onClick,className, size }) => {
 	return (

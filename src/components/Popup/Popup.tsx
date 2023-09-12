@@ -1,14 +1,13 @@
 import ReactDom from "react-dom";
 import style from './Popup.module.scss';
+
 import Card from '../UI/Card/Card';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
-import { ErrorInfo } from '../../App';
 
-interface PopupProps {
-	setPopup: (newIsCartValue: boolean) => void;
-	newText: ErrorInfo | undefined;
-}
+import { PopupProps } from '../../types/types';
+
+
 
 const Popup: React.FC<PopupProps> = ({ setPopup, newText }) => {
 	const text = newText ? newText.text : '';

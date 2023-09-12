@@ -1,14 +1,11 @@
 import {useState} from 'react';
 import style from './MobileNavigation.module.scss';
+
 import ExitButton from '../Buttons/ExitButton/ExitButton';
 import hangerImage from '../../../assets/img/clothes-hanger.png';
-import {ErrorInfo} from '../../../App';
 
-interface MobileNavigationProp {
-	setMobileNav: (isMobileNav: boolean) => void;
-	setError: (errorText: ErrorInfo) => void;
-	setPopup: (isPopup: boolean) => void;
-}
+import {MobileNavigationProp} from '../../../types/types';
+
 
 const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup }) => {
 

@@ -1,9 +1,6 @@
 import style from "../Card/Card.module.scss";
 
-interface CardProps{
-    children: React.ReactNode;
-    className: string;
-}
+import {CardProps} from "../../../types/types";
 
 const Card: React.FC<CardProps> = ({children,className}) => {
     const classes = `${style.card} ${className}`;

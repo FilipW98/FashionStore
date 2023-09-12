@@ -1,18 +1,13 @@
 import './ShoppingCart.module.scss';
-import { FaTrashCan } from 'react-icons/fa6';
 import style from './ShoppingCart.module.scss';
-import { Items } from '../../App';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
-interface ShoppingCartProps {
-	setIsCart: (newIsCartValue: boolean) => void;
-	itemsInCart: Items[];
-	totalPrice: number;
-	setItems: (newItems: Items[]) => void;
-	setTotalPrice: (newTotalPrice: number) => void;
-}
+import { FaTrashCan } from 'react-icons/fa6';
+
+import { ShoppingCartProps } from '../../types/types';
 
 const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems, setTotalPrice }) => {
+
 	const removeItemHandler = (itemId: number) => {
 		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
 		setItems(newItemsArr);
