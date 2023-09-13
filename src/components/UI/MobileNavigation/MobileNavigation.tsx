@@ -1,23 +1,29 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import style from './MobileNavigation.module.scss';
 
 import ExitButton from '../Buttons/ExitButton/ExitButton';
 import hangerImage from '../../../assets/img/clothes-hanger.png';
 
-import {MobileNavigationProp} from '../../../types/types';
+import { MobileNavigationProp } from '../../../types/types';
 
-
-const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup,setIsShoes,isShoes,setIsClothes,isClothes,setIsAccessories,isAccessories}) => {
-
+const MobileNavigation: React.FC<MobileNavigationProp> = ({
+	setMobileNav,
+	setIsShoes,
+	isShoes,
+	setIsClothes,
+	isClothes,
+	setIsAccessories,
+	isAccessories,
+}) => {
 	const [closing, setClosing] = useState(false);
 
-    const handleCloseNav = () => {
+	const handleCloseNav = () => {
 		setClosing(true);
 		setTimeout(() => {
-            setMobileNav(false);
-        }, 500);
-	}
-    
+			setMobileNav(false);
+		}, 500);
+	};
+
 	return (
 		<div className={`${style.mobileNav} ${closing ? style.closing : ''}`}>
 			<ExitButton
@@ -26,7 +32,6 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setErro
 					handleCloseNav();
 				}}
 				size={45}>
-
 				</ExitButton>
 
 			<div className={style['mobile-nav-box']}>
@@ -36,29 +41,33 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setErro
 				</div>
 
 				<div className={style['btn-box']}>
-					<button className={` ${isClothes ? style.active : ""}`}
+					<button
+						className={` ${isClothes ? style.active : ''}`}
 						onClick={() => {
 							handleCloseNav();
-							setIsClothes(true)
-							setIsShoes(false)
+							setIsClothes(true);
+							setIsShoes(false);
+							setIsAccessories(false);
 						}}>
 						Clothes
 					</button>
 					<button
-						className={` ${isShoes ? style.active : ""}`}
+						className={` ${isShoes ? style.active : ''}`}
 						onClick={() => {
 							handleCloseNav();
-							setIsShoes(true)
-							setIsClothes(false)
+							setIsShoes(true);
+							setIsClothes(false);
+							setIsAccessories(false);
 						}}>
 						Shoes
 					</button>
 					<button
+						className={` ${isAccessories ? style.active : ''}`}
 						onClick={() => {
-							setPopup(true);
-							setError({
-							text: "This feature is unavaliable."
-						})
+							handleCloseNav();
+							setIsAccessories(true);
+							setIsShoes(false);
+							setIsClothes(false);
 						}}>
 						Accessories
 					</button>

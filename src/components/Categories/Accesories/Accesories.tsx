@@ -20,9 +20,9 @@ const items = [
 	},
 	{
 		id: 15,
-		name: 'Okulary',
-		price: 110,
-		image: require('../../../assets/img/Accessories/sunglasses-removebg-preview.png'),
+		name: 'Casio Watch',
+		price: 220,
+		image: require('../../../assets/img/Accessories/watch.png'),
 		count: 1,
 	},
 	{
@@ -36,14 +36,14 @@ const items = [
 		id: 17,
 		name: 'Nike Bag',
 		price: 199,
-		image: require('../../../assets/img/Accessories/torba-removebg-preview.png'),
+		image: require('../../../assets/img/Accessories/bag.png'),
 		count: 1,
 	},
 	{
 		id: 18,
-		name: 'Nerka',
+		name: 'Alpha Fanny Pack',
 		price: 129,
-		image: require('../../../assets/img/Accessories/fanny-pack-removebg-preview.png'),
+		image: require('../../../assets/img/Accessories/fanny-pack.png'),
 		count: 1,
 	},
 ];

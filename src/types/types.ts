@@ -43,8 +43,6 @@ export interface ItemsCardProps{
 
 export interface MobileNavigationProp {
 	setMobileNav: (isMobileNav: boolean) => void;
-	setError: (errorText: ErrorInfo) => void;
-	setPopup: (isPopup: boolean) => void;
 	setIsShoes: (isShoes: boolean) => void;
 	isShoes:boolean;
 	setIsClothes: (isClothes:boolean) => void;

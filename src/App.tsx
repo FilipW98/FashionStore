@@ -61,8 +61,6 @@ function App() {
 			)}
 			{isMobileNav && (
 				<MobileNavigation
-					setError={setError}
-					setPopup={setPopup}
 					setMobileNav={setMobileNav}
 					setIsShoes={setIsShoes}
 					isShoes={isShoes}
