@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/ShoppingCart/static/css/main.e080e915.css",
-    "main.js": "/ShoppingCart/static/js/main.20d24b78.js",
+    "main.js": "/ShoppingCart/static/js/main.e4fde026.js",
     "static/media/jeans-jacket.png": "/ShoppingCart/static/media/jeans-jacket.cba83459516a6444a654.png",
     "static/media/gray-shoe.png": "/ShoppingCart/static/media/gray-shoe.d166ffd4a7ebdb8344be.png",
-    "static/media/szorty-z-paskiem-removebg-preview.png": "/ShoppingCart/static/media/szorty-z-paskiem-removebg-preview.cd6eb8fef9acd6e2cf01.png",
+    "static/media/shorts.png": "/ShoppingCart/static/media/shorts.cd6eb8fef9acd6e2cf01.png",
     "static/media/big-shoe.png": "/ShoppingCart/static/media/big-shoe.49d5f621c90efa6bf875.png",
     "static/media/black-cap.png": "/ShoppingCart/static/media/black-cap.64a056f1c84f51259ef1.png",
     "static/media/gray-trousers.png": "/ShoppingCart/static/media/gray-trousers.d7bedbc525718dfb4bed.png",
@@ -16,10 +16,10 @@
     "static/media/black-nike.png": "/ShoppingCart/static/media/black-nike.b1bbeda0810a0e7c7c93.png",
     "index.html": "/ShoppingCart/index.html",
     "main.e080e915.css.map": "/ShoppingCart/static/css/main.e080e915.css.map",
-    "main.20d24b78.js.map": "/ShoppingCart/static/js/main.20d24b78.js.map"
+    "main.e4fde026.js.map": "/ShoppingCart/static/js/main.e4fde026.js.map"
   },
   "entrypoints": [
     "static/css/main.e080e915.css",
-    "static/js/main.20d24b78.js"
+    "static/js/main.e4fde026.js"
   ]
 }
