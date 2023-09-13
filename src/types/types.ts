@@ -46,6 +46,9 @@ export interface MobileNavigationProp {
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
 	setIsShoes: (isShoes: boolean) => void;
+	isShoes:boolean;
+	setIsClothes: (isClothes:boolean) => void;
+	isClothes:boolean;
 }
 
 export interface NavigationProps {
@@ -72,6 +75,5 @@ export interface ItemProps {
 	  image: string;
 	  count: number;
 	}
-
 	onAddToCart: (item:Items) => void;
   }

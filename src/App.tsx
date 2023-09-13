@@ -58,7 +58,7 @@ function App() {
 					setTotalPrice={setTotalPrice}
 				/>
 			)}
-			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} setIsShoes={setIsShoes} />}
+			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} setIsShoes={setIsShoes} isShoes={isShoes} setIsClothes={setIsClothes} isClothes={isClothes}/>}
 			{popup && <Popup setPopup={setPopup} newText={error} />}
 
 			<div className={style.app}>

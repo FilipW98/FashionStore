@@ -23,7 +23,7 @@ const items = [
 		id: 3,
 		name: 'Rainbow Shorts',
 		price: 99,
-		image: require('../../../assets/img/ClothesImg/szorty-z-paskiem-removebg-preview.png'),
+		image: require('../../../assets/img/ClothesImg/shorts.png'),
 		count: 1,
 	},
 	{

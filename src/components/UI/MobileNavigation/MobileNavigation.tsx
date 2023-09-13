@@ -7,7 +7,7 @@ import hangerImage from '../../../assets/img/clothes-hanger.png';
 import {MobileNavigationProp} from '../../../types/types';
 
 
-const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup,setIsShoes}) => {
+const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup,setIsShoes,isShoes,setIsClothes,isClothes}) => {
 
 	const [closing, setClosing] = useState(false);
 
@@ -36,22 +36,20 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setErro
 				</div>
 
 				<div className={style['btn-box']}>
-					{' '}
-					<button
+					<button className={` ${isClothes ? style.active : ""}`}
 						onClick={() => {
-							setPopup(true);
-							setError({
-							text: "This feature is unavaliable."
-						})
-
+							handleCloseNav();
+							setIsClothes(true)
+							setIsShoes(false)
 						}}>
 						Clothes
 					</button>
 					<button
-						className={style.active}
+						className={` ${isShoes ? style.active : ""}`}
 						onClick={() => {
-							setMobileNav(false);
+							handleCloseNav();
 							setIsShoes(true)
+							setIsClothes(false)
 						}}>
 						Shoes
 					</button>
@@ -61,7 +59,6 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setErro
 							setError({
 							text: "This feature is unavaliable."
 						})
-
 						}}>
 						Accessories
 					</button>
