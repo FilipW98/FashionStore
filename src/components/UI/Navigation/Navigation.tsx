@@ -18,6 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({
 	isShoes,
 	setIsClothes,
 	isClothes,
+	setIsAccessories
 }) => {
 	return (
 		<div className={style.navbar__container}>
@@ -32,8 +33,10 @@ const Navigation: React.FC<NavigationProps> = ({
 				<button
 					className={`${isClothes ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
-						setIsShoes(false);
 						setIsClothes(true);
+						setIsShoes(false);
+						setIsAccessories(false)
+
 					}}>
 					Clothes
 				</button>
@@ -42,16 +45,17 @@ const Navigation: React.FC<NavigationProps> = ({
 					onClick={() => {
 						setIsShoes(true);
 						setIsClothes(false);
+						setIsAccessories(false)
+
 					}}>
 					Shoes
 				</button>
 				<button
 					className={style['category-btn']}
 					onClick={() => {
-						setPopup(true);
-						setError({
-							text: 'This feature is unavaliable.',
-						});
+						setIsAccessories(true)
+						setIsShoes(false);
+						setIsClothes(false);
 					}}>
 					Accessories
 				</button>

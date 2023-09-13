@@ -5,7 +5,7 @@ import { ItemProps } from '../../../types/types';
 const Item: React.FC<ItemProps> = ({item,onAddToCart}) => {
 	return (
 		<div className={style.item}>
-			<img className={style['item-img']} alt='shoes' src={item.image} />
+			<img className={style['item-img']} alt={item.name} src={item.image} />
 			<div className={style['item-data']}>
 				<h4 className={style['item-name']}>{item.name}</h4>
 				<span>${item.price}</span>

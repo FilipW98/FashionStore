@@ -1,6 +1,6 @@
 import ItemsCard from '../../UI/Cards/ItemsCard/ItemsCard';
 import Item from '../../UI/Item/Item';
-import { ShoesProps } from '../../../types/types';
+import { CategoryProps } from '../../../types/types';
 
 const items = [
 	{
@@ -47,7 +47,7 @@ const items = [
 	},
 ];
 
-const Shoes: React.FC<ShoesProps> = ({ addItemsToCart }) => {
+const Shoes: React.FC<CategoryProps> = ({ addItemsToCart }) => {
 	return (
 		<ItemsCard className='' categoryName={"Shoes"}>
 			{items.map(item => {

@@ -35,7 +35,7 @@ export interface PopupCardProps{
     className: string;
 }
 
-export interface CategoryProps{
+export interface ItemsCardProps{
     children: React.ReactNode;
     className: string;
 	categoryName: string;
@@ -49,6 +49,8 @@ export interface MobileNavigationProp {
 	isShoes:boolean;
 	setIsClothes: (isClothes:boolean) => void;
 	isClothes:boolean;
+	setIsAccessories: (isAccessories:boolean) => void;
+	isAccessories:boolean;
 }
 
 export interface NavigationProps {
@@ -61,9 +63,11 @@ export interface NavigationProps {
 	isShoes:boolean;
 	setIsClothes: (isClothes:boolean) => void;
 	isClothes:boolean;
+	setIsAccessories: (isAccessories:boolean) => void;
+	isAccessories:boolean;
 }
 
-export interface ShoesProps {
+export interface CategoryProps {
 	addItemsToCart: (item: Items) => void;
 } 
 

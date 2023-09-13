@@ -7,7 +7,7 @@ import hangerImage from '../../../assets/img/clothes-hanger.png';
 import {MobileNavigationProp} from '../../../types/types';
 
 
-const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup,setIsShoes,isShoes,setIsClothes,isClothes}) => {
+const MobileNavigation: React.FC<MobileNavigationProp> = ({setMobileNav, setError, setPopup,setIsShoes,isShoes,setIsClothes,isClothes,setIsAccessories,isAccessories}) => {
 
 	const [closing, setClosing] = useState(false);
 

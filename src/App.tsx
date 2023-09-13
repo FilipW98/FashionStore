@@ -9,6 +9,7 @@ import Shoes from './components/Categories/Shoes/Shoes';
 import Clothes from './components/Categories/Clothes/Clothes';
 
 import { Items, ErrorInfo } from './types/types';
+import Accesories from './components/Categories/Accesories/Accesories';
 
 function App() {
 	const [isCart, setIsCart] = useState(false);
@@ -58,7 +59,19 @@ function App() {
 					setTotalPrice={setTotalPrice}
 				/>
 			)}
-			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} setIsShoes={setIsShoes} isShoes={isShoes} setIsClothes={setIsClothes} isClothes={isClothes}/>}
+			{isMobileNav && (
+				<MobileNavigation
+					setError={setError}
+					setPopup={setPopup}
+					setMobileNav={setMobileNav}
+					setIsShoes={setIsShoes}
+					isShoes={isShoes}
+					setIsClothes={setIsClothes}
+					isClothes={isClothes}
+					setIsAccessories={setIsAccessories}
+					isAccessories={isAccessories}
+				/>
+			)}
 			{popup && <Popup setPopup={setPopup} newText={error} />}
 
 			<div className={style.app}>
@@ -72,10 +85,13 @@ function App() {
 					isShoes={isShoes}
 					setIsClothes={setIsClothes}
 					isClothes={isClothes}
+					setIsAccessories={setIsAccessories}
+					isAccessories={isAccessories}
 				/>
 				<main className={style.main}>
 					{isShoes && <Shoes addItemsToCart={addItemsToCart}></Shoes>}
 					{isClothes && <Clothes addItemsToCart={addItemsToCart}></Clothes>}
+					{isAccessories && <Accesories addItemsToCart={addItemsToCart}></Accesories>}
 				</main>
 			</div>
 		</div>

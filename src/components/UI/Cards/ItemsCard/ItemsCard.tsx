@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './ItemsCard.module.scss';
-import { CategoryProps } from '../../../../types/types';
+import { ItemsCardProps } from '../../../../types/types';
 
-const ItemsCard: React.FC<CategoryProps> = ({ children,categoryName }) => {
+const ItemsCard: React.FC<ItemsCardProps> = ({ children,categoryName }) => {
 	return (
 		<div>
       	<div className={style['title-box']}>

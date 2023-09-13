@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemsCard from '../../UI/Cards/ItemsCard/ItemsCard';
 import Item from '../../UI/Item/Item';
-import { ShoesProps } from '../../../types/types';
+import { CategoryProps } from '../../../types/types';
 
 
 const items = [
@@ -50,7 +50,7 @@ const items = [
 ];
 
 
-const Clothes: React.FC<ShoesProps>  = ({ addItemsToCart }) => {
+const Clothes: React.FC<CategoryProps>  = ({ addItemsToCart }) => {
   return (
     <ItemsCard className='' categoryName={'Clothes'}>
     {items.map(item => {
