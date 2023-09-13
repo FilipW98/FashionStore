@@ -30,15 +30,22 @@ export interface ButtonProps {
 	size: number;
 }
 
-export interface CardProps{
+export interface PopupCardProps{
     children: React.ReactNode;
     className: string;
+}
+
+export interface CategoryProps{
+    children: React.ReactNode;
+    className: string;
+	categoryName: string;
 }
 
 export interface MobileNavigationProp {
 	setMobileNav: (isMobileNav: boolean) => void;
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
+	setIsShoes: (isShoes: boolean) => void;
 }
 
 export interface NavigationProps {
@@ -47,6 +54,10 @@ export interface NavigationProps {
 	setMobileNav: (isMobileNav: boolean) => void;
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
+	setIsShoes: (isShoes:boolean) => void;
+	isShoes:boolean;
+	setIsClothes: (isClothes:boolean) => void;
+	isClothes:boolean;
 }
 
 export interface ShoesProps {

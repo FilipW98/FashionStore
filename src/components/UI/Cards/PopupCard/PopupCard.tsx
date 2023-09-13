@@ -1,11 +1,11 @@
 import style from '../PopupCard/PopupCard.module.scss';
 
-import { CardProps } from '../../../../types/types';
+import { PopupCardProps } from '../../../../types/types';
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
+const PopupCard: React.FC<PopupCardProps> = ({ children, className }) => {
 	const classes = `${style['popup-card']} ${className}`;
 
 	return <div className={classes}>{children}</div>;
 };
 
-export default Card;
+export default PopupCard;

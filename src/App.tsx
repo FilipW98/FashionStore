@@ -6,19 +6,22 @@ import Navigation from './components/UI/Navigation/Navigation';
 import Popup from './components/Popup/Popup';
 import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 import Shoes from './components/Categories/Shoes/Shoes';
+import Clothes from './components/Categories/Clothes/Clothes';
 
-import {Items,ErrorInfo} from "./types/types";
-
+import { Items, ErrorInfo } from './types/types';
 
 function App() {
-	
 	const [isCart, setIsCart] = useState(false);
 	const [itemsInCart, setItems] = useState<Items[]>([]);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [popup, setPopup] = useState(false);
 	const [isMobileNav, setMobileNav] = useState(false);
 	const [error, setError] = useState<ErrorInfo>();
-	
+
+	const [isShoes, setIsShoes] = useState(true);
+	const [isClothes, setIsClothes] = useState(false);
+	const [isAccessories, setIsAccessories] = useState(false);
+
 	const cartHandler = () => {
 		setIsCart(true);
 	};
@@ -55,7 +58,7 @@ function App() {
 					setTotalPrice={setTotalPrice}
 				/>
 			)}
-			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} />}
+			{isMobileNav && <MobileNavigation setError={setError} setPopup={setPopup} setMobileNav={setMobileNav} setIsShoes={setIsShoes} />}
 			{popup && <Popup setPopup={setPopup} newText={error} />}
 
 			<div className={style.app}>
@@ -65,14 +68,14 @@ function App() {
 					setMobileNav={setMobileNav}
 					setError={setError}
 					setPopup={setPopup}
+					setIsShoes={setIsShoes}
+					isShoes={isShoes}
+					setIsClothes={setIsClothes}
+					isClothes={isClothes}
 				/>
 				<main className={style.main}>
-					<div className={style['title-box']}>
-						<h3 className={style.title}>Shoes</h3>
-						<div className={style.underline}></div>
-					</div>
-
-		<Shoes addItemsToCart={addItemsToCart} ></Shoes>
+					{isShoes && <Shoes addItemsToCart={addItemsToCart}></Shoes>}
+					{isClothes && <Clothes addItemsToCart={addItemsToCart}></Clothes>}
 				</main>
 			</div>
 		</div>
@@ -80,4 +83,3 @@ function App() {
 }
 
 export default App;
-

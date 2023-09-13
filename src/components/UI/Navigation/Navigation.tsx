@@ -6,10 +6,19 @@ import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench } from 'react-icons/fa6';
 import { FaBars } from 'react-icons/fa6';
 
-import { NavigationProps } from "../../../types/types";
+import { NavigationProps } from '../../../types/types';
 
-
-const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMobileNav, setError, setPopup }) => {
+const Navigation: React.FC<NavigationProps> = ({
+	cartHandler,
+	itemsInCart,
+	setMobileNav,
+	setError,
+	setPopup,
+	setIsShoes,
+	isShoes,
+	setIsClothes,
+	isClothes,
+}) => {
 	return (
 		<div className={style.navbar__container}>
 			<FaBars
@@ -20,22 +29,29 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMo
 				size={35}
 			/>
 			<div className={style.navbar__categories}>
-				<button className={style['category-btn']}
+				<button
+					className={`${isClothes ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
-						setPopup(true);
-						setError({
-							text: "This feature is unavaliable."
-						})
+						setIsShoes(false);
+						setIsClothes(true);
 					}}>
 					Clothes
 				</button>
-				<button className={`${style.active} ${style['category-btn']}`}>Shoes</button>
-				<button className={style['category-btn']}
+				<button
+					className={`${isShoes ? style.active : ''} ${style['category-btn']}`}
+					onClick={() => {
+						setIsShoes(true);
+						setIsClothes(false);
+					}}>
+					Shoes
+				</button>
+				<button
+					className={style['category-btn']}
 					onClick={() => {
 						setPopup(true);
 						setError({
-							text: "This feature is unavaliable."
-						})
+							text: 'This feature is unavaliable.',
+						});
 					}}>
 					Accessories
 				</button>
@@ -57,8 +73,8 @@ const Navigation: React.FC<NavigationProps> = ({ cartHandler, itemsInCart, setMo
 					onClick={() => {
 						setPopup(true);
 						setError({
-							text: "This feature is unavaliable."
-						})
+							text: 'This feature is unavaliable.',
+						});
 					}}>
 					<FaScrewdriverWrench className={style.icon} size={25} />
 				</button>
