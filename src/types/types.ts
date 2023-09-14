@@ -52,7 +52,6 @@ export interface MobileNavigationProp {
 }
 
 export interface NavigationProps {
-	// cartHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	setIsCart: (isCart:boolean)=> void;
 	itemsInCart: Items[];
 	setMobileNav: (isMobileNav: boolean) => void;

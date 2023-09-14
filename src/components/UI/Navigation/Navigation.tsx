@@ -18,7 +18,8 @@ const Navigation: React.FC<NavigationProps> = ({
 	isShoes,
 	setIsClothes,
 	isClothes,
-	setIsAccessories
+	setIsAccessories,
+	isAccessories,
 }) => {
 	return (
 		<div className={style.navbar__container}>
@@ -51,7 +52,7 @@ const Navigation: React.FC<NavigationProps> = ({
 					Shoes
 				</button>
 				<button
-					className={style['category-btn']}
+					className={`${isAccessories ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
 						setIsAccessories(true)
 						setIsShoes(false);
