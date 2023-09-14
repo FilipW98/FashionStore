@@ -47,11 +47,11 @@ const items = [
 	},
 ];
 
-const Shoes: React.FC<CategoryProps> = ({ addItemsToCart }) => {
+const Shoes: React.FC<CategoryProps> = ({ onAddItems }) => {
 	return (
 		<ItemsCard className='' categoryName={"Shoes"}>
 			{items.map(item => {
-				return <Item key={item.id} item={item} onAddToCart={addItemsToCart}></Item>;
+				return <Item key={item.id} item={item} onAddToCart={onAddItems}></Item>;
 			})}
 		</ItemsCard>
 	);

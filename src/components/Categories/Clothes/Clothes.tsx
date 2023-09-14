@@ -50,11 +50,11 @@ const items = [
 ];
 
 
-const Clothes: React.FC<CategoryProps>  = ({ addItemsToCart }) => {
+const Clothes: React.FC<CategoryProps>  = ({ onAddItems }) => {
   return (
     <ItemsCard className='' categoryName={'Clothes'}>
     {items.map(item => {
-        return <Item key={item.id} item={item} onAddToCart={addItemsToCart}></Item>;
+        return <Item key={item.id} item={item} onAddToCart={onAddItems}></Item>;
     })}
 </ItemsCard>
   )

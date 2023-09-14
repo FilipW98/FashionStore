@@ -52,7 +52,8 @@ export interface MobileNavigationProp {
 }
 
 export interface NavigationProps {
-	cartHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	// cartHandler: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	setIsCart: (isCart:boolean)=> void;
 	itemsInCart: Items[];
 	setMobileNav: (isMobileNav: boolean) => void;
 	setError: (errorText: ErrorInfo) => void;
@@ -66,7 +67,7 @@ export interface NavigationProps {
 }
 
 export interface CategoryProps {
-	addItemsToCart: (item: Items) => void;
+	onAddItems: (item: Items) => void;
 } 
 
 export interface ItemProps {

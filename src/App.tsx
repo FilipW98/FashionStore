@@ -23,9 +23,6 @@ function App() {
 	const [isClothes, setIsClothes] = useState(false);
 	const [isAccessories, setIsAccessories] = useState(false);
 
-	const cartHandler = () => {
-		setIsCart(true);
-	};
 
 	const addItemsToCart = (item: Items) => {
 		const itemExists = itemsInCart.some(cartItem => cartItem.id === item.id);
@@ -74,7 +71,7 @@ function App() {
 
 			<div className={style.app}>
 				<Navigation
-					cartHandler={cartHandler}
+					setIsCart={setIsCart}
 					itemsInCart={itemsInCart}
 					setMobileNav={setMobileNav}
 					setError={setError}
@@ -87,9 +84,9 @@ function App() {
 					isAccessories={isAccessories}
 				/>
 				<main className={style.main}>
-					{isShoes && <Shoes addItemsToCart={addItemsToCart}></Shoes>}
-					{isClothes && <Clothes addItemsToCart={addItemsToCart}></Clothes>}
-					{isAccessories && <Accesories addItemsToCart={addItemsToCart}></Accesories>}
+					{isShoes && <Shoes onAddItems={addItemsToCart}></Shoes>}
+					{isClothes && <Clothes onAddItems={addItemsToCart}></Clothes>}
+					{isAccessories && <Accesories onAddItems={addItemsToCart}></Accesories>}
 				</main>
 			</div>
 		</div>

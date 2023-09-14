@@ -9,7 +9,7 @@ import { FaBars } from 'react-icons/fa6';
 import { NavigationProps } from '../../../types/types';
 
 const Navigation: React.FC<NavigationProps> = ({
-	cartHandler,
+	setIsCart,
 	itemsInCart,
 	setMobileNav,
 	setError,
@@ -66,7 +66,7 @@ const Navigation: React.FC<NavigationProps> = ({
 			</div>
 
 			<div className={style['icons-box']}>
-				<button className={style['shopping-cart-btn']} onClick={cartHandler}>
+				<button className={style['shopping-cart-btn']} onClick={()=>{setIsCart(true)}}>
 					<FaShoppingBag className={style.icon} size={25} />
 					<div className={style.counter}>
 						<p>{itemsInCart.length}</p>
