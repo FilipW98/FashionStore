@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext} from 'react';
 import style from './App.module.scss';
 
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
@@ -7,47 +7,42 @@ import Popup from './components/Popup/Popup';
 import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 import Shoes from './components/Categories/Shoes/Shoes';
 import Clothes from './components/Categories/Clothes/Clothes';
-
-import { Items, ErrorInfo } from './types/types';
 import Accesories from './components/Categories/Accesories/Accesories';
 
 import AuthContext from './store/auth-context';
 
 function App() {
-	const [isCart, setIsCart] = useState(false);
-	const [itemsInCart, setItems] = useState<Items[]>([]);
-	const [totalPrice, setTotalPrice] = useState(0);
-	const [popup, setPopup] = useState(false);
-	const [isMobileNav, setMobileNav] = useState(false);
-	const [error, setError] = useState<ErrorInfo>();
 
-	const [isShoes, setIsShoes] = useState(true);
-	const [isClothes, setIsClothes] = useState(false);
-	const [isAccessories, setIsAccessories] = useState(false);
+ const authContext = useContext(AuthContext);
 
-	const addItemsToCart = (item: Items) => {
-		const itemExists = itemsInCart.some(cartItem => cartItem.id === item.id);
+ if (!authContext) {
+   return null; 
+ }
 
-		if (itemExists) {
-			setPopup(true);
-			setError({
-				text: 'This item is already in the cart!',
-			});
-			return;
-		}
-
-		const newItem = {
-			...item,
-			count: 1,
-		};
-		setTotalPrice(totalPrice + item.price);
-		setItems([...itemsInCart, newItem]);
-	};
-
-	const overflowClass = isCart || isMobileNav ? style['overflow-hidden'] : '';
+ const {
+   isCart,
+   setIsCart,
+   itemsInCart,
+   setItems,
+   totalPrice,
+   setTotalPrice,
+   popup,
+   setPopup,
+   isMobileNav,
+   setMobileNav,
+   error,
+   setError,
+   isShoes,
+   setIsShoes,
+   isClothes,
+   setIsClothes,
+   isAccessories,
+   setIsAccessories,
+   overflowClass,
+ } = authContext;
 
 	return (
-		<AuthContext.Provider value={{ onAddItems: addItemsToCart }}>
+		
 			<div className={`${style.container} ${overflowClass}`}>
 				{isCart && (
 					<ShoppingCart
@@ -92,7 +87,6 @@ function App() {
 					</main>
 				</div>
 			</div>
-		</AuthContext.Provider>
 	);
 }
 

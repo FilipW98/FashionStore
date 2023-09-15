@@ -75,3 +75,26 @@ export interface ItemProps {
 	  count: number;
 	}
   }
+
+  export interface AuthContextProps {
+	onAddItems: (item: Items) => void;
+	isCart: boolean;
+	setIsCart: React.Dispatch<React.SetStateAction<boolean>>;
+	itemsInCart: Items[];
+	setItems: React.Dispatch<React.SetStateAction<Items[]>>;
+	totalPrice: number;
+	setTotalPrice: React.Dispatch<React.SetStateAction<number>>;
+	popup: boolean;
+	setPopup: React.Dispatch<React.SetStateAction<boolean>>;
+	isMobileNav: boolean;
+	setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
+	error: ErrorInfo | undefined;
+	setError: React.Dispatch<React.SetStateAction<ErrorInfo | undefined>>;
+	isShoes: boolean;
+	setIsShoes: React.Dispatch<React.SetStateAction<boolean>>;
+	isClothes: boolean;
+	setIsClothes: React.Dispatch<React.SetStateAction<boolean>>;
+	isAccessories: boolean;
+	setIsAccessories: React.Dispatch<React.SetStateAction<boolean>>;
+	overflowClass: string;
+  }

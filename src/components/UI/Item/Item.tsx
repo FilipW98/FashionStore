@@ -4,7 +4,12 @@ import { ItemProps } from '../../../types/types';
 import AuthContext from '../../../store/auth-context';
 
 const Item: React.FC<ItemProps> = ({ item }) => {
+	
 	const ctx = useContext(AuthContext)
+	if(!ctx){
+		return null
+	}
+
 	return (
 		<div className={style.item}>
 			<img className={style['item-img']} alt={item.name} src={item.image} />
