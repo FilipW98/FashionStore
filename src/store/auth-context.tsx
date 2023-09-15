@@ -1,5 +1,5 @@
 import React, {useState,ReactNode} from 'react';
-import style from './App.module.scss';
+import style from '../App.module.scss';
 import { Items,AuthContextProps,ErrorInfo } from '../types/types';
 
 const AuthContext = React.createContext<AuthContextProps | undefined>(undefined);
