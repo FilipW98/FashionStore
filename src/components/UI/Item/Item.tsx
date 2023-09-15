@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './Item.module.scss';
 import { ItemProps } from '../../../types/types';
+import AuthContext from '../../../store/auth-context';
 
-const Item: React.FC<ItemProps> = ({item,onAddToCart}) => {
+const Item: React.FC<ItemProps> = ({ item }) => {
+	const ctx = useContext(AuthContext)
 	return (
 		<div className={style.item}>
 			<img className={style['item-img']} alt={item.name} src={item.image} />
@@ -12,7 +14,7 @@ const Item: React.FC<ItemProps> = ({item,onAddToCart}) => {
 				<button
 					className={`btn ${style['add-btn']}`}
 					onClick={() => {
-						onAddToCart(item);
+						ctx.onAddItems(item);
 					}}>
 					Add to cart
 				</button>

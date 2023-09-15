@@ -1,7 +1,6 @@
 import React from 'react'
 import ItemsCard from '../../UI/Cards/ItemsCard/ItemsCard';
 import Item from '../../UI/Item/Item';
-import { CategoryProps } from '../../../types/types';
 
 const items = [
 	{
@@ -48,11 +47,11 @@ const items = [
 	},
 ];
 
-const Accesories: React.FC <CategoryProps> = ({onAddItems}) => {
+const Accesories= () => {
   return (
     <ItemsCard className='' categoryName={"Accessories"}>
     {items.map(item => {
-        return <Item key={item.id} item={item} onAddToCart={onAddItems}></Item>;
+        return <Item key={item.id} item={item}></Item>;
     })}
 </ItemsCard>
   )

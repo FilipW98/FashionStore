@@ -65,9 +65,6 @@ export interface NavigationProps {
 	isAccessories:boolean;
 }
 
-export interface CategoryProps {
-	onAddItems: (item: Items) => void;
-} 
 
 export interface ItemProps {
 	item:{
@@ -77,5 +74,4 @@ export interface ItemProps {
 	  image: string;
 	  count: number;
 	}
-	onAddToCart: (item:Items) => void;
   }
