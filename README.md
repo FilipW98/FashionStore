@@ -49,12 +49,12 @@ npm -v // should display the NPM version
 #### 2. Clone this repository using the Git command: (before clone, make sure You have installed git on Your computer)
 
 ```
-git clone https://github.com/FilipW98/ShoppingCart
+git clone https://github.com/FilipW98/FashionStore
 ```
 
 #### 3. Navigate to the directory where you cloned the repository using the cd command. For example, if You cloned the repository to Your "MyFolder", You have to  type the correct path to this folder, for e.g. the following command:
 ```
-cd/MyFolder/ShoppingCart
+cd/MyFolder/FashionStore
 ```
 
 #### 4. Go to the project directory and install all NPM dependencies by typing in the console:
