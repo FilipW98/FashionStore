@@ -7,7 +7,7 @@
   
 </div>
 
-## <div align="center" ><a href="https://filipw98.github.io/ShoppingCart/" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
+## <div align="center" ><a href="https://filipw98.github.io/FasionStore/" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
 
 ## Tech Stack
 
