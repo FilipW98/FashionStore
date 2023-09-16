@@ -1,13 +1,13 @@
 <div align="center">
-<h1> FasionStore </h1>
+<h1> FashionStore </h1>
 </div>
 
 <div align="center"> 
- Fasion Store represents an online shop where you can add selected items to your shopping cart. Then You can go to the cart, where You can add more items or remove them. The cart also shows the total price of all products added to it. This project was bootstrapped with Create React App. This application is still under construction.
+ Fashion Store represents an online shop where you can add selected items to your shopping cart. Then You can go to the cart, where You can add more items or remove them. The cart also shows the total price of all products added to it. This project was bootstrapped with Create React App. This application is still under construction.
   
 </div>
 
-## <div align="center" ><a href="https://filipw98.github.io/FasionStore/" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
+## <div align="center" ><a href="https://filipw98.github.io/FashionStore/" target="_blank" rel="noreferrer"> <img src="./src/assets/img/live-icon.png" alt="live icon" width="80" height="40"/> </a>  </div>
 
 ## Tech Stack
 
