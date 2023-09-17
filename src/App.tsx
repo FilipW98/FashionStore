@@ -10,6 +10,7 @@ import Clothes from './components/Categories/Clothes/Clothes';
 import Accesories from './components/Categories/Accesories/Accesories';
 
 import AuthContext from './store/auth-context';
+import Footer from './components/UI/Footer/Footer';
 
 function App() {
 
@@ -85,6 +86,7 @@ function App() {
 						{isClothes && <Clothes></Clothes>}
 						{isAccessories && <Accesories></Accesories>}
 					</main>
+					<Footer/>
 				</div>
 			</div>
 	);

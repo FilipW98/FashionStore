@@ -1,6 +1,6 @@
 import style from './Navigation.module.scss';
 
-import hangerImage from '../../../assets/img/clothes-hanger.png';
+import hangerImage from '../../../assets/img/black-hanger.png';
 
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench } from 'react-icons/fa6';

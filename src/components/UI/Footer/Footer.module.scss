@@ -1,0 +1,83 @@
+@import "../../../styles/colors";
+
+.footer{
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 10vh;
+    bottom: 0;
+    background-color: #131313;
+
+    .logo {
+        margin-right: 0.2em;
+        width: 53px;
+        color: #fff;
+
+    }
+
+    .list{
+        display: flex;
+        list-style: none;
+        color: #fff;
+        padding: 1em;
+        
+        li{
+            font-size: .8rem;
+            margin: 0em 1em;
+        }
+    }
+
+.social-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icons{
+        padding: 0.3em;
+    }
+}
+    .social-text{
+        color: #fff;
+
+    }
+}
+
+
+
+
+@media (max-width: 768px){
+
+    .footer{
+        .logo {
+            width: 43px;
+        }
+        .list{
+            li{
+                font-size: 0.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px){
+
+    .footer{
+        flex-direction: column;
+        padding: 1em;
+
+        .logo {
+            width: 53px;
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            li{
+                padding: 1em;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

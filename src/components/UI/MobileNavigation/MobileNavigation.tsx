@@ -2,7 +2,7 @@ import { useState } from 'react';
 import style from './MobileNavigation.module.scss';
 
 import ExitButton from '../Buttons/ExitButton/ExitButton';
-import hangerImage from '../../../assets/img/clothes-hanger.png';
+import hangerImage from '../../../assets/img/black-hanger.png';
 
 import { MobileNavigationProp } from '../../../types/types';
 
