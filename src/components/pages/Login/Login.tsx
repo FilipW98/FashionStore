@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Login.module.scss';
-import Underline from '../UI/Underline/Underline';
+import Underline from '../../UI/Underline/Underline';
 
 const Login = () => {
   return (

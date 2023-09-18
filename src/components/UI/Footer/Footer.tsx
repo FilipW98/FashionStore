@@ -17,7 +17,6 @@ const Footer = () => {
         </div>
 
         <div className={style['social-box']}>
-            {/* <p className={style['social-text']}>FIND US ON</p> */}
             <ul className={`${style.list} ${style.icons}`}>
                 <li><FaFacebook size={20}/></li>
                 <li><FaSquareTwitter size={20}/></li>

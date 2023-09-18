@@ -8,12 +8,7 @@ import { MobileNavigationProp } from '../../../types/types';
 
 const MobileNavigation: React.FC<MobileNavigationProp> = ({
 	setMobileNav,
-	setIsShoes,
-	isShoes,
-	setIsClothes,
-	isClothes,
-	setIsAccessories,
-	isAccessories,
+	currentPage,
 }) => {
 	const [closing, setClosing] = useState(false);
 
@@ -42,32 +37,23 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({
 
 				<div className={style['btn-box']}>
 					<button
-						className={` ${isClothes ? style.active : ''}`}
+						className={` ${currentPage === 'Clothes'? style.active : ''}`}
 						onClick={() => {
 							handleCloseNav();
-							setIsClothes(true);
-							setIsShoes(false);
-							setIsAccessories(false);
 						}}>
 						Clothes
 					</button>
 					<button
-						className={` ${isShoes ? style.active : ''}`}
+						className={` ${currentPage === 'Shoes'  ? style.active : ''}`}
 						onClick={() => {
 							handleCloseNav();
-							setIsShoes(true);
-							setIsClothes(false);
-							setIsAccessories(false);
 						}}>
 						Shoes
 					</button>
 					<button
-						className={` ${isAccessories ? style.active : ''}`}
+						className={` ${currentPage === 'Accessories' ? style.active : ''}`}
 						onClick={() => {
 							handleCloseNav();
-							setIsAccessories(true);
-							setIsShoes(false);
-							setIsClothes(false);
 						}}>
 						Accessories
 					</button>

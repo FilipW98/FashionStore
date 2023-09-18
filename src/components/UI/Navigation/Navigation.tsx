@@ -9,17 +9,13 @@ import { FaBars } from 'react-icons/fa6';
 import { NavigationProps } from '../../../types/types';
 
 const Navigation: React.FC<NavigationProps> = ({
+	handleSwitchPages,
 	setIsCart,
 	itemsInCart,
 	setMobileNav,
 	setError,
 	setPopup,
-	setIsShoes,
-	isShoes,
-	setIsClothes,
-	isClothes,
-	setIsAccessories,
-	isAccessories,
+	currentPage
 }) => {
 	return (
 		<div className={style.navbar__container}>
@@ -32,38 +28,30 @@ const Navigation: React.FC<NavigationProps> = ({
 			/>
 			<div className={style.navbar__categories}>
 				<button
-					className={`${isClothes ? style.active : ''} ${style['category-btn']}`}
+					className={`${currentPage === 'Clothes' ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
-						setIsClothes(true);
-						setIsShoes(false);
-						setIsAccessories(false)
-
+						handleSwitchPages('Clothes');
 					}}>
 					Clothes
 				</button>
 				<button
-					className={`${isShoes ? style.active : ''} ${style['category-btn']}`}
+					className={`${currentPage === 'Shoes' ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
-						setIsShoes(true);
-						setIsClothes(false);
-						setIsAccessories(false)
-
+						handleSwitchPages('Shoes');
 					}}>
 					Shoes
 				</button>
 				<button
-					className={`${isAccessories ? style.active : ''} ${style['category-btn']}`}
+					className={`${currentPage === 'Accessories' ? style.active : ''} ${style['category-btn']}`}
 					onClick={() => {
-						setIsAccessories(true)
-						setIsShoes(false);
-						setIsClothes(false);
+						handleSwitchPages('Accessories');
 					}}>
 					Accessories
 				</button>
 			</div>
 			<div className={style['logo-box']}>
 				<img className={style.logo} src={hangerImage} alt='hanger' />
-				<h2>FashionStore</h2>
+				<h2 onClick={()=> {handleSwitchPages('main')}}>FashionStore</h2>
 			</div>
 
 			<div className={style['icons-box']}>

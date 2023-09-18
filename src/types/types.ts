@@ -30,53 +30,45 @@ export interface ButtonProps {
 	size: number;
 }
 
-export interface PopupCardProps{
-    children: React.ReactNode;
-    className: string;
+export interface PopupCardProps {
+	children: React.ReactNode;
+	className: string;
 }
 
-export interface ItemsCardProps{
-    children: React.ReactNode;
-    className: string;
+export interface ItemsCardProps {
+	children: React.ReactNode;
+	className: string;
 	categoryName: string;
 }
 
 export interface MobileNavigationProp {
 	setMobileNav: (isMobileNav: boolean) => void;
-	setIsShoes: (isShoes: boolean) => void;
-	isShoes:boolean;
-	setIsClothes: (isClothes:boolean) => void;
-	isClothes:boolean;
-	setIsAccessories: (isAccessories:boolean) => void;
-	isAccessories:boolean;
+	currentPage: string;
 }
 
 export interface NavigationProps {
-	setIsCart: (isCart:boolean)=> void;
+	handleSwitchPages: (page:string) => void;
+	setIsCart: (isCart: boolean) => void;
 	itemsInCart: Items[];
 	setMobileNav: (isMobileNav: boolean) => void;
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
-	setIsShoes: (isShoes:boolean) => void;
-	isShoes:boolean;
-	setIsClothes: (isClothes:boolean) => void;
-	isClothes:boolean;
-	setIsAccessories: (isAccessories:boolean) => void;
-	isAccessories:boolean;
+	currentPage: string;
 }
 
-
 export interface ItemProps {
-	item:{
-	  id: number;
-	  name: string;
-	  price: number;
-	  image: string;
-	  count: number;
-	}
-  }
+	item: {
+		id: number;
+		name: string;
+		price: number;
+		image: string;
+		count: number;
+	};
+}
 
-  export interface AuthContextProps {
+export interface AuthContextProps {
+	currentPage: string;
+	handleSwitchPages:  (page: string) => void;
 	onAddItems: (item: Items) => void;
 	isCart: boolean;
 	setIsCart: React.Dispatch<React.SetStateAction<boolean>>;
@@ -90,11 +82,5 @@ export interface ItemProps {
 	setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
 	error: ErrorInfo | undefined;
 	setError: React.Dispatch<React.SetStateAction<ErrorInfo | undefined>>;
-	isShoes: boolean;
-	setIsShoes: React.Dispatch<React.SetStateAction<boolean>>;
-	isClothes: boolean;
-	setIsClothes: React.Dispatch<React.SetStateAction<boolean>>;
-	isAccessories: boolean;
-	setIsAccessories: React.Dispatch<React.SetStateAction<boolean>>;
 	overflowClass: string;
-  }
+}
