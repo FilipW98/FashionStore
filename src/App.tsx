@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import style from './App.module.scss';
 
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import Navigation from './components/UI/Navigation/Navigation';
 import Popup from './components/Popup/Popup';
 import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 import Shoes from './components/pages/Shoes/Shoes';
@@ -12,6 +11,9 @@ import Accesories from './components/pages/Accesories/Accesories';
 import AuthContext from './store/auth-context';
 import Footer from './components/UI/Footer/Footer';
 import MainPage from './components/pages/MainPage/MainPage';
+import RootLayout from "./components/pages/RootLayout/RootLayout";
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
 	const authContext = useContext(AuthContext);
@@ -22,8 +24,8 @@ function App() {
 
 	const {
 		currentPage,
-
-		handleSwitchPages,
+		// setCurrentPage,
+		// handleSwitchPages,
 		isCart,
 		setIsCart,
 		itemsInCart,
@@ -35,44 +37,43 @@ function App() {
 		isMobileNav,
 		setMobileNav,
 		error,
-		setError,
+		// setError,
 		overflowClass,
 	} = authContext;
 
+	const router = createBrowserRouter([
+		{path: '/', 
+		element: <RootLayout/>, 
+		children: [
+			{ path: '/', element: <MainPage /> },
+			{ path: '/Shoes', element: <Shoes /> },
+			{ path: '/Clothes', element: <Clothes /> },
+			{ path: '/Accessories', element: <Accesories /> },
+		]
+	},
+	]);
+
 	return (
 		<div className={`${style.container} ${overflowClass}`}>
-			{isCart && (
-				<ShoppingCart
-					setIsCart={setIsCart}
-					itemsInCart={itemsInCart}
-					totalPrice={totalPrice}
-					setItems={setItems}
-					setTotalPrice={setTotalPrice}
-				/>
-			)}
-			{isMobileNav && <MobileNavigation currentPage={currentPage} setMobileNav={setMobileNav} />}
-			{popup && <Popup setPopup={setPopup} newText={error} />}
+				{isCart && (
+					<ShoppingCart
+						setIsCart={setIsCart}
+						itemsInCart={itemsInCart}
+						totalPrice={totalPrice}
+						setItems={setItems}
+						setTotalPrice={setTotalPrice}
+					/>
+				)}
 
-			<div className={style.app}>
-				<Navigation
-					handleSwitchPages={handleSwitchPages}
-					setIsCart={setIsCart}
-					itemsInCart={itemsInCart}
-					setMobileNav={setMobileNav}
-					setError={setError}
-					setPopup={setPopup}
-					currentPage={currentPage}
-				/>
-				{currentPage === 'main' && <MainPage />}
+				{isMobileNav && <MobileNavigation currentPage={currentPage} setMobileNav={setMobileNav} />}
+				{popup && <Popup setPopup={setPopup} newText={error} />}
 
-				<main className={style.main}>
-					{currentPage === 'Shoes' && <Shoes />}
-					{currentPage === 'Clothes' && <Clothes />}
-					{currentPage === 'Accessories' && <Accesories />}
-				</main>
-				<Footer />
+				<div className={style.app}>
+					<RouterProvider router={router}/>
+					<Footer />
+				</div>
 			</div>
-		</div>
+		
 	);
 }
 

@@ -12,15 +12,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const [isMobileNav, setMobileNav] = useState(false);
 	const [error, setError] = useState<ErrorInfo>();
 
-
-
-    const [currentPage, setCurrentPage] = useState('main');
-
-    const handleSwitchPages = (page: string) => {
-      setCurrentPage(page);
-    };
-
-
+    const [currentPage, setCurrentPage] = useState('');
+ 
 	const addItemsToCart = (item: Items) => {
 		const itemExists = itemsInCart.some(cartItem => cartItem.id === item.id);
 
@@ -43,8 +36,10 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <AuthContext.Provider value={{
+            
             currentPage,
-            handleSwitchPages,
+            setCurrentPage,
+            // handleSwitchPages,
             onAddItems: addItemsToCart,
             isCart,
             setIsCart,

@@ -1,3 +1,5 @@
+// import { ReactNode } from "react";
+
 export interface Items {
 	id: number;
 	name: string;
@@ -47,13 +49,11 @@ export interface MobileNavigationProp {
 }
 
 export interface NavigationProps {
-	handleSwitchPages: (page:string) => void;
-	setIsCart: (isCart: boolean) => void;
 	itemsInCart: Items[];
 	setMobileNav: (isMobileNav: boolean) => void;
 	setError: (errorText: ErrorInfo) => void;
 	setPopup: (isPopup: boolean) => void;
-	currentPage: string;
+	
 }
 
 export interface ItemProps {
@@ -67,8 +67,8 @@ export interface ItemProps {
 }
 
 export interface AuthContextProps {
+	setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
 	currentPage: string;
-	handleSwitchPages:  (page: string) => void;
 	onAddItems: (item: Items) => void;
 	isCart: boolean;
 	setIsCart: React.Dispatch<React.SetStateAction<boolean>>;
