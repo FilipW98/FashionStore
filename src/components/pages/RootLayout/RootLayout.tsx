@@ -11,18 +11,15 @@ const RootLayout = () => {
 		return null;
 	}
 
-	const {  itemsInCart, setMobileNav, setError, setPopup} = authContext;
+	const { itemsInCart, setMobileNav, setError, setPopup} = authContext;
 
 	return (
 		<>
 			<Navigation
-				// setIsCart={setIsCart}
 				itemsInCart={itemsInCart}
 				setMobileNav={setMobileNav}
 				setError={setError}
 				setPopup={setPopup}
-				// currentPage={currentPage}
-				// setCurrentPage={setCurrentPage}
 			/>
 			<main className={style.main}>
 				<Outlet />

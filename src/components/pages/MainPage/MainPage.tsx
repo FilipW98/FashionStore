@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import style from './MainPage.module.scss';
 
 import clothesMain from '../../../assets/img/MainPageImg/clothes-main.jpg';
@@ -6,12 +6,21 @@ import shoesMain from '../../../assets/img/MainPageImg/shoes-main.jpg';
 import accessoriesMain from '../../../assets/img/MainPageImg/accessories-main.jpg';
 
 import { Link } from 'react-router-dom';
+import AuthContext from '../../../store/auth-context';
+
 
 const MainPage = () => {
+
+	const mainPageCtx = useContext(AuthContext);
+	if(!mainPageCtx){
+		return null;
+	}
+
+
 	return (
 		<div className={style.container}>
 			<div className={style['img-box']}>
-				<Link to='/Clothes' className={style.link}>
+				<Link to='/Clothes' className={style.link} onClick={() => {mainPageCtx.setCurrentPage('Clothes')}}>
 					<div className={`${style['img-text']} ${style.clothes}`}>
 						<div className={style['img-shadow']}>
 							<p>Clothes</p>
@@ -21,7 +30,7 @@ const MainPage = () => {
 					</div>
 				</Link>
 
-				<Link to='/Shoes' className={style.link}>
+				<Link to='/Shoes' className={style.link} onClick={() => {mainPageCtx.setCurrentPage('Shoes')}}>
 					<div className={style['img-text']}>
 						<div className={style['img-shadow']}>
 							<p>Shoes</p>
@@ -30,7 +39,7 @@ const MainPage = () => {
 					</div>
 				</Link>
 
-				<Link to='/Accessories' className={style.link}>
+				<Link to='/Accessories' className={style.link}  onClick={() => {mainPageCtx.setCurrentPage('Accessories')}}>
 					<div className={style['img-text']}>
 						<div className={style['img-shadow']}>
 							<p>Accessories</p>
