@@ -3,7 +3,6 @@ import style from './App.module.scss';
 
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Popup from './components/Popup/Popup';
-import MobileNavigation from './components/UI/MobileNavigation/MobileNavigation';
 import Shoes from './components/pages/Shoes/Shoes';
 import Clothes from './components/pages/Clothes/Clothes';
 import Accesories from './components/pages/Accesories/Accesories';
@@ -23,9 +22,6 @@ function App() {
 	}
 
 	const {
-		currentPage,
-		// setCurrentPage,
-		// handleSwitchPages,
 		isCart,
 		setIsCart,
 		itemsInCart,
@@ -34,10 +30,7 @@ function App() {
 		setTotalPrice,
 		popup,
 		setPopup,
-		isMobileNav,
-		setMobileNav,
 		error,
-		// setError,
 		overflowClass,
 	} = authContext;
 
@@ -64,10 +57,7 @@ function App() {
 						setTotalPrice={setTotalPrice}
 					/>
 				)}
-
-				{isMobileNav && <MobileNavigation currentPage={currentPage} setMobileNav={setMobileNav} />}
 				{popup && <Popup setPopup={setPopup} newText={error} />}
-
 				<div className={style.app}>
 					<RouterProvider router={router}/>
 					<Footer />

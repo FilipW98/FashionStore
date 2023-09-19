@@ -6,17 +6,11 @@ import hangerImage from '../../../assets/img/black-hanger.png';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench, FaBars } from 'react-icons/fa6';
 
-import { NavigationProps } from '../../../types/types';
+// import { NavigationProps } from '../../../types/types';
 
 import { Link } from 'react-router-dom';
 
-const Navigation: React.FC<NavigationProps> = ({
-	// setIsCart,
-	itemsInCart,
-	setMobileNav,
-	setError,
-	setPopup,
-}) => {
+const Navigation= () => {
 
 	const navCtx = useContext(AuthContext);
 	if(!navCtx){
@@ -27,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({
 		<div className={style.navbar__container}>
 			<FaBars
 				onClick={() => {
-					setMobileNav(true);
+					navCtx.setMobileNav(true);
 				}}
 				className={style.burgerBtn}
 				size={35}
@@ -78,14 +72,14 @@ const Navigation: React.FC<NavigationProps> = ({
 					}}>
 					<FaShoppingBag className={style.icon} size={25} />
 					<div className={style.counter}>
-						<p>{itemsInCart.length}</p>
+						<p>{navCtx.itemsInCart.length}</p>
 					</div>
 				</button>
 				<button
 					className={style['shopping-cart-btn']}
 					onClick={() => {
-						setPopup(true);
-						setError({
+						navCtx.setPopup(true);
+						navCtx.setError({
 							text: 'This feature is unavaliable.',
 						});
 					}}>

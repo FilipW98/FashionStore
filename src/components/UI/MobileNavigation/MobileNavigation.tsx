@@ -1,23 +1,28 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import style from './MobileNavigation.module.scss';
 
 import ExitButton from '../Buttons/ExitButton/ExitButton';
 import hangerImage from '../../../assets/img/black-hanger.png';
 
-import { MobileNavigationProp } from '../../../types/types';
+import AuthContext from '../../../store/auth-context';
+import { Link } from 'react-router-dom';
 
-const MobileNavigation: React.FC<MobileNavigationProp> = ({
-	setMobileNav,
-	currentPage,
-}) => {
+
+const MobileNavigation = () => {
 	const [closing, setClosing] = useState(false);
+
+	const mobileNavCtx = useContext(AuthContext);
+	if(!mobileNavCtx){
+		return null;
+	}
 
 	const handleCloseNav = () => {
 		setClosing(true);
 		setTimeout(() => {
-			setMobileNav(false);
+			mobileNavCtx.setMobileNav(false);
 		}, 500);
 	};
+
 
 	return (
 		<div className={`${style.mobileNav} ${closing ? style.closing : ''}`}>
@@ -36,27 +41,30 @@ const MobileNavigation: React.FC<MobileNavigationProp> = ({
 				</div>
 
 				<div className={style['btn-box']}>
-					<button
-						className={` ${currentPage === 'Clothes'? style.active : ''}`}
+					<Link to='/Clothes'
+						className={` ${mobileNavCtx.currentPage === 'Clothes'? style.active : ''} ${style.mobileBtn}`}
 						onClick={() => {
 							handleCloseNav();
+							mobileNavCtx.setCurrentPage('Clothes')
 						}}>
 						Clothes
-					</button>
-					<button
-						className={` ${currentPage === 'Shoes'  ? style.active : ''}`}
+					</Link>
+					<Link to='/Shoes'
+						className={` ${mobileNavCtx.currentPage === 'Shoes'  ? style.active : ''} ${style.mobileBtn}`}
 						onClick={() => {
 							handleCloseNav();
+							mobileNavCtx.setCurrentPage('Shoes');
 						}}>
 						Shoes
-					</button>
-					<button
-						className={` ${currentPage === 'Accessories' ? style.active : ''}`}
+					</Link>
+					<Link to="/Accessories"
+						className={` ${mobileNavCtx.currentPage === 'Accessories' ? style.active : ''} ${style.mobileBtn}`}
 						onClick={() => {
 							handleCloseNav();
+							mobileNavCtx.setCurrentPage('Accessories')
 						}}>
 						Accessories
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>

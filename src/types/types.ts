@@ -42,18 +42,17 @@ export interface ItemsCardProps {
 	categoryName: string;
 }
 
-export interface MobileNavigationProp {
-	setMobileNav: (isMobileNav: boolean) => void;
-	currentPage: string;
-}
+// export interface MobileNavigationProp {
+// 	setMobileNav: (isMobileNav: boolean) => void;
+// }
 
-export interface NavigationProps {
-	itemsInCart: Items[];
-	setMobileNav: (isMobileNav: boolean) => void;
-	setError: (errorText: ErrorInfo) => void;
-	setPopup: (isPopup: boolean) => void;
+// export interface NavigationProps {
+// 	// itemsInCart: Items[];
+// 	// setMobileNav: (isMobileNav: boolean) => void;
+// 	// setError: (errorText: ErrorInfo) => void;
+// 	setPopup: (isPopup: boolean) => void;
 	
-}
+// }
 
 export interface ItemProps {
 	item: {

@@ -1,26 +1,21 @@
 import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from '../../UI/Navigation/Navigation';
+import MobileNavigation from '../../UI/MobileNavigation/MobileNavigation';
 import AuthContext from '../../../store/auth-context';
 import style from "./RootLayout.module.scss";
 
 const RootLayout = () => {
-	const authContext = useContext(AuthContext);
+	const ctx = useContext(AuthContext);
 
-	if (!authContext) {
+	if (!ctx) {
 		return null;
 	}
 
-	const { itemsInCart, setMobileNav, setError, setPopup} = authContext;
-
 	return (
 		<>
-			<Navigation
-				itemsInCart={itemsInCart}
-				setMobileNav={setMobileNav}
-				setError={setError}
-				setPopup={setPopup}
-			/>
+			{ctx.isMobileNav && <MobileNavigation/>}
+			<Navigation/>
 			<main className={style.main}>
 				<Outlet />
 			</main>
