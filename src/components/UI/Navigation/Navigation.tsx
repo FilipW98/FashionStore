@@ -6,7 +6,6 @@ import hangerImage from '../../../assets/img/black-hanger.png';
 import { FaShoppingBag } from 'react-icons/fa';
 import { FaScrewdriverWrench, FaBars } from 'react-icons/fa6';
 
-// import { NavigationProps } from '../../../types/types';
 
 import { Link } from 'react-router-dom';
 

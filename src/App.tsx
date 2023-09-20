@@ -38,7 +38,7 @@ function App() {
 		{path: '/', 
 		element: <RootLayout/>, 
 		children: [
-			{ path: '/', element: <MainPage /> },
+			{ path: '', element: <MainPage /> },
 			{ path: '/Shoes', element: <Shoes /> },
 			{ path: '/Clothes', element: <Clothes /> },
 			{ path: '/Accessories', element: <Accesories /> },
