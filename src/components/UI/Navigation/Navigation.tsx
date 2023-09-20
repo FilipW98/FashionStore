@@ -54,10 +54,11 @@ const Navigation= () => {
 				</Link>
 			</div>
 			<div className={style['logo-box']}>
-				<Link onClick={() => {
-						navCtx.setCurrentPage('');
+				<Link
+				 onClick={() => {
+						navCtx.setCurrentPage('FashionStore');
 					}}
-				to='/'>
+				to='/FashionStore'>
 					<img className={style.logo} src={hangerImage} alt='hanger' />
 					<h2>FashionStore</h2>
 				</Link>

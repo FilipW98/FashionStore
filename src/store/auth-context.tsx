@@ -33,7 +33,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	};
 
 	const overflowClass = isCart || isMobileNav ? style['overflow-hidden'] : '';
-console.log(currentPage);
+
     return (
         <AuthContext.Provider value={{
             currentPage,
