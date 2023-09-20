@@ -42,17 +42,6 @@ export interface ItemsCardProps {
 	categoryName: string;
 }
 
-// export interface MobileNavigationProp {
-// 	setMobileNav: (isMobileNav: boolean) => void;
-// }
-
-// export interface NavigationProps {
-// 	// itemsInCart: Items[];
-// 	// setMobileNav: (isMobileNav: boolean) => void;
-// 	// setError: (errorText: ErrorInfo) => void;
-// 	setPopup: (isPopup: boolean) => void;
-	
-// }
 
 export interface ItemProps {
 	item: {
@@ -80,5 +69,4 @@ export interface AuthContextProps {
 	setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
 	error: ErrorInfo | undefined;
 	setError: React.Dispatch<React.SetStateAction<ErrorInfo | undefined>>;
-	overflowClass: string;
 }

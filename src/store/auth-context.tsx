@@ -1,5 +1,4 @@
-import React, {useState,ReactNode} from 'react';
-import style from '../App.module.scss';
+import React, {useState,ReactNode, useEffect} from 'react';
 import { Items,AuthContextProps,ErrorInfo } from '../types/types';
 
 const AuthContext = React.createContext<AuthContextProps | undefined>(undefined);
@@ -32,7 +31,14 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 		setItems([...itemsInCart, newItem]);
 	};
 
-	const overflowClass = isCart || isMobileNav ? style['overflow-hidden'] : '';
+    useEffect(() => {
+         if (isMobileNav) {
+          document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'scroll';
+        }
+      }, [isMobileNav]);
+
 
     return (
         <AuthContext.Provider value={{
@@ -51,7 +57,6 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
             setMobileNav,
             error,
             setError,
-            overflowClass
           }}>
             {children}
         </AuthContext.Provider>

@@ -31,7 +31,6 @@ function App() {
 		popup,
 		setPopup,
 		error,
-		overflowClass,
 	} = authContext;
 
 	const router = createBrowserRouter([
@@ -44,10 +43,10 @@ function App() {
 			{ path: '/Accessories', element: <Accesories /> },
 		]
 	},
-	]);
+	]); 
 
 	return (
-		<div className={`${style.container} ${overflowClass}`}>
+		<div className={style.container}>
 				{isCart && (
 					<ShoppingCart
 						setIsCart={setIsCart}
