@@ -13,6 +13,7 @@ import MainPage from './components/pages/MainPage/MainPage';
 import RootLayout from "./components/pages/RootLayout/RootLayout";
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Newsletter from './components/UI/Newsletter/Newsletter';
 
 function App() {
 	const authContext = useContext(AuthContext);
@@ -30,7 +31,7 @@ function App() {
 		setTotalPrice,
 		popup,
 		setPopup,
-		error,
+		message,
 	} = authContext;
 
 	const router = createBrowserRouter([
@@ -56,9 +57,10 @@ function App() {
 						setTotalPrice={setTotalPrice}
 					/>
 				)}
-				{popup && <Popup setPopup={setPopup} newText={error} />}
+				{popup && <Popup setPopup={setPopup} newText={message} />}
 				<div className={style.app}>
 					<RouterProvider router={router}/>
+					<Newsletter/>
 					<Footer />
 				</div>
 			</div>

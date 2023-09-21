@@ -79,7 +79,7 @@ const Navigation= () => {
 					className={style['shopping-cart-btn']}
 					onClick={() => {
 						navCtx.setPopup(true);
-						navCtx.setError({
+						navCtx.setMessage({
 							text: 'This feature is unavaliable.',
 						});
 					}}>

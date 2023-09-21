@@ -1,5 +1,5 @@
 import React, {useState,ReactNode, useEffect} from 'react';
-import { Items,AuthContextProps,ErrorInfo } from '../types/types';
+import { Items,AuthContextProps,MessageInfo } from '../types/types';
 
 const AuthContext = React.createContext<AuthContextProps | undefined>(undefined);
 
@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [popup, setPopup] = useState(false);
 	const [isMobileNav, setMobileNav] = useState(false);
-	const [error, setError] = useState<ErrorInfo>();
+	const [message, setMessage] = useState<MessageInfo>();
 
     const [currentPage, setCurrentPage] = useState('');
  
@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
 		if (itemExists) {
 			setPopup(true);
-			setError({
+			setMessage({
 				text: 'This item is already in the cart!',
 			});
 			return;
@@ -55,8 +55,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
             setPopup,
             isMobileNav,
             setMobileNav,
-            error,
-            setError,
+            message,
+            setMessage,
           }}>
             {children}
         </AuthContext.Provider>

@@ -7,7 +7,7 @@ export interface Items {
 	count: number;
 }
 
-export interface ErrorInfo {
+export interface MessageInfo {
 	text: string;
 }
 
@@ -21,7 +21,7 @@ export interface ShoppingCartProps {
 
 export interface PopupProps {
 	setPopup: (newIsCartValue: boolean) => void;
-	newText: ErrorInfo | undefined;
+	newText: MessageInfo | undefined;
 }
 
 export interface ButtonProps {
@@ -67,6 +67,6 @@ export interface AuthContextProps {
 	setPopup: React.Dispatch<React.SetStateAction<boolean>>;
 	isMobileNav: boolean;
 	setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
-	error: ErrorInfo | undefined;
-	setError: React.Dispatch<React.SetStateAction<ErrorInfo | undefined>>;
+	message: MessageInfo | undefined;
+	setMessage: React.Dispatch<React.SetStateAction<MessageInfo | undefined>>;
 }
