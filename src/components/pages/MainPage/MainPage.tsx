@@ -7,6 +7,7 @@ import accessoriesMain from '../../../assets/img/MainPageImg/accessories-main.jp
 
 import { Link } from 'react-router-dom';
 import AuthContext from '../../../store/auth-context';
+import TopRated from '../../TopRated/TopRated';
 
 
 const MainPage = () => {
@@ -48,6 +49,7 @@ const MainPage = () => {
 					</div>
 				</Link>
 			</div>
+			<TopRated/>
 		</div>
 	);
 };
