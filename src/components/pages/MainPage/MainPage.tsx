@@ -26,14 +26,13 @@ const MainPage = () => {
 						<div className={style['img-shadow']}>
 							<p>Clothes</p>
 						</div>
-
 						<img src={clothesMain} alt='Clothes' className={style['category-img']} />
 					</div>
 				</Link>
 
 				<Link to='/Shoes' className={style.link} onClick={() => {mainPageCtx.setCurrentPage('Shoes')}}>
 					<div className={style['img-text']}>
-						<div className={style['img-shadow']}>
+						<div className={`${style['img-shadow']} ${style['img-shoes']}`}>
 							<p>Shoes</p>
 						</div>
 						<img src={shoesMain} alt='Shoes' className={style['category-img']} />
@@ -42,7 +41,7 @@ const MainPage = () => {
 
 				<Link to='/Accessories' className={style.link}  onClick={() => {mainPageCtx.setCurrentPage('Accessories')}}>
 					<div className={style['img-text']}>
-						<div className={style['img-shadow']}>
+						<div className={`${style['img-shadow']} ${style['img-accessories']}`}>
 							<p>Accessories</p>
 						</div>
 						<img src={accessoriesMain} alt='Accessories' className={style['category-img']} />
