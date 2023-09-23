@@ -17,7 +17,7 @@ const Navigation= () => {
 	}
 
 	return (
-		<div className={style.navbar__container}>
+		<div className={style['navbar-container']}>
 			<FaBars
 				onClick={() => {
 					navCtx.setMobileNav(true);
@@ -25,7 +25,7 @@ const Navigation= () => {
 				className={style.burgerBtn}
 				size={35}
 			/>
-			<div className={style.navbar__categories}>
+			<div className={style['navbar-categories']}>
 				<Link
 					onClick={() => {
 						navCtx.setCurrentPage('Clothes');

@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './TopRated.module.scss';
 import Item from '../UI/Item/Item';
+import Underline from '../UI/Underline/Underline';
 
 const TopRated = () => {
 	const items = [
@@ -39,24 +40,27 @@ const TopRated = () => {
 			image: require('../../assets/img/ShoesImg/puma.png'),
 			count: 1,
 		},
-        {
-            id: 4,
-            name: 'Graphite Bugatti Coat',
-            price: 599,
-            image: require('../../assets/img/ClothesImg/coat.png'),
-            count: 1,
-        },
+		{
+			id: 4,
+			name: 'Graphite Bugatti Coat',
+			price: 599,
+			image: require('../../assets/img/ClothesImg/coat.png'),
+			count: 1,
+		},
 	];
 	return (
-		<div className={style['top-rated-box']}>
-			<h2 className={style.title}>Top Rated:</h2>
-			<div className={style['top-items-box']}>
-				
+		<div className={style['top-rated-container']}>
+			<div className={style['title-box']}>
+				<h2 className={style.title}>Top Rated:</h2>
+				<Underline />
+			</div>
+			
+				<div className={style['top-items-box']}>
 					{items.map(item => {
 						return <Item key={item.id} item={item}></Item>;
 					})}
-				
-			</div>
+				</div>
+			
 		</div>
 	);
 };
