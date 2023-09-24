@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import style from './MainPage.module.scss';
 
-import clothesMain from '../../../assets/img/MainPageImg/clothes-main.jpg';
+import clothesMain from '../../../assets/img/MainPageImg/clothes-main.jpg'
 import shoesMain from '../../../assets/img/MainPageImg/shoes-main.jpg';
 import accessoriesMain from '../../../assets/img/MainPageImg/accessories-main.jpg';
 
@@ -16,7 +16,6 @@ const MainPage = () => {
 	if(!mainPageCtx){
 		return null;
 	}
-
 
 	return (
 		<div className={style.container}>

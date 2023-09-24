@@ -1,16 +1,40 @@
 @import '../../../styles/colors';
 
 .navbar-container {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.225);
 	z-index: 0;
-	box-shadow: 0px 0px 6px 1px #1c1c1c63;
+	background-color: #252320;
+	// box-shadow: 0px 0px 6px 1px #1c1c1c63;
+
+	.wave {
+		position: absolute;
+		bottom: -75px;
+		bottom: -70px;
+		bottom: -60px;
+		bottom: -30px;
+		left: 0;
+		width: 100%;
+		transform: rotate(180deg);
+	}
+	
+	.wave svg {
+		position: relative;
+		display: block;
+		width: calc(100% + 1.3px);
+		height: 75px;
+		height: 70px;
+		height: 60px;
+		height: 30px;
+	}
 }
 
 .logo {
-	margin-right: 0.2em;
+	margin-right: 0.3em;
 	width: 33px;
+	height: 38px;
 }
 
 .logo-box {
@@ -20,7 +44,7 @@
 	a{
 		display: flex;
 		align-items: center;
-		color: black;
+		color: white;
 		text-decoration: none;
 	}
 
@@ -50,17 +74,25 @@
 		top: 35px;
 		border-radius: 50%;
 		background-color: $secondary-color;
+		// background-color: $primary-color;
+		// background-color: #91dd77;
+		border: 1px solid rgb(22, 22, 22);
 		p {
 			color: #fff;
+			color: #333;
+
 			font-size: 0.7rem;
 		}
 	}
 }
-.shopping-cart-btn:hover {
-	background-color: $background-item;
-}
+// .shopping-cart-btn:hover {
+// 	// background-color: $background-item;
+// 	background-color: $primary-color;
+// }
 .shopping-cart-btn:hover .icon {
-	color: rgba(255, 255, 255, 0.896);
+	// color: rgba(255, 255, 255, 0.896);
+	color: $secondary-color;
+	// color: black;
 }
 
 .navbar-categories {
@@ -68,23 +100,29 @@
 	cursor: pointer;
 	.active {
 		border-bottom: 3px solid $secondary-color;
+		// background-color: $secondary-color;
+		color: #fff;
 	}
+
 }
 .category-link {
 	display: flex;
 	align-items: center;
 	padding: 0 1em;
-	color: black;
+	color: #fff;
 	text-decoration: none;
 	}
 .category-link:hover  {
-	color: #fff;
-	background-color: $background-item;
+	color: $secondary-color;
 }
 
+.icon{
+	color: #fff;
+	
+}
 
 .icon:hover {
-	color: #fff;
+	color: $secondary-color;
 }
 
 .icons-box {

@@ -4,7 +4,8 @@ import style from './Footer.module.scss';
 import {FaFacebook,FaSquareTwitter,FaSquareInstagram} from "react-icons/fa6";
 const Footer = () => {
   return (
-    <div className={style.footer}>
+    <div className={style['footer-container']}>
+<div className={style.footer}>
 <img className={style.logo} src={hangerImage} alt='hanger' />
         <div className={style['footer-links']}>
         <ul className={`${style.list} ${style.text}`}>
@@ -23,6 +24,7 @@ const Footer = () => {
                 <li><FaSquareInstagram size={20}/></li>
             </ul>
         </div>
+</div>
 
     </div>
   )

@@ -5,7 +5,7 @@ import Underline from '../../Underline/Underline';
 
 const ItemsCard: React.FC<ItemsCardProps> = ({ children, categoryName }) => {
 	return (
-		<div>
+		<div className={style['items-card-container']}>
 			<div className={style['title-box']}>
 				<h3 className={style.title}>{categoryName}</h3>
 				<Underline />
