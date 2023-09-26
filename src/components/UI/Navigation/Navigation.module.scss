@@ -87,7 +87,7 @@
 	cursor: pointer;
 	font-size: 1.2rem;
 	.active {
-		border-bottom: 3px solid $secondary-color;
+		color:  $secondary-color;
 	}
 }
 .category-link {
@@ -166,6 +166,8 @@
 
 @media (max-width: 450px) {
 	.navbar-container {
+	margin-bottom: 6em;
+
 		.wave {
 			bottom: -10px;
 		}

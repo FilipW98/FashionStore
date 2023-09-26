@@ -7,7 +7,7 @@ const ItemsCard: React.FC<ItemsCardProps> = ({ children, categoryName }) => {
 	return (
 		<div className={style['items-card-container']}>
 			<div className={style['title-box']}>
-				<h3 className={style.title}>{categoryName}</h3>
+				<h2 className={style.title}>{categoryName}</h2>
 				<Underline />
 			</div>
 			<div className={style.items}>{children}</div>
