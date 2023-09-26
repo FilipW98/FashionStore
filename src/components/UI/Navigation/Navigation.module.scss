@@ -4,6 +4,8 @@
 	position: relative;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 9em;
+	min-height: 11vh;
 	z-index: 0;
 	background-color: $background-item;
 
@@ -20,6 +22,10 @@
 		display: block;
 		width: calc(100% + 1.3px);
 		height: 30px;
+	}
+
+	.icons-box {
+		align-self: center;
 	}
 }
 
@@ -108,6 +114,19 @@
 	color: #fff;
 }
 
+
+@media( min-width: 1200px) {
+
+	.navbar-categories {
+		margin-left: 4em;
+	}
+	.icons-box {
+		align-self: center;
+		margin-right: 4em;
+	}
+
+}
+
 @media (max-width: 992px) {
 	.navbar-container {
 		align-items: center;
@@ -168,7 +187,7 @@
 		font-size: 1.2rem;
 		margin-right: -12px;
 	}
-	.shopping-cart-btn{
-		padding: 1.5em .9em;
+	.shopping-cart-btn {
+		padding: 1.5em 0.9em;
 	}
 }

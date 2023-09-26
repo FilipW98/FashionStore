@@ -70,7 +70,7 @@ const Navigation = () => {
 					}}
 					to='/FashionStore'>
 					<img className={style.logo} src={hangerImage} alt='hanger' />
-					<h1 className={style.title}>FashionStoree</h1>
+					<h1 className={style.title}>FashionStore</h1>
 				</Link>
 			</div>
 
