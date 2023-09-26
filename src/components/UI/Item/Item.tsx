@@ -5,6 +5,8 @@ import AuthContext from '../../../store/auth-context';
 
 const Item: React.FC<ItemProps> = ({ item }) => {
 	
+
+
 	const ctx = useContext(AuthContext)
 	if(!ctx){
 		return null
@@ -20,6 +22,11 @@ const Item: React.FC<ItemProps> = ({ item }) => {
 					className={`btn ${style['add-btn']}`}
 					onClick={() => {
 						ctx.onAddItems(item);
+						ctx.setIsAnimation(true);
+
+						setTimeout(() => {
+							ctx.setIsAnimation(false); 
+						  }, 500); 
 					}}>
 					Add to cart
 				</button>

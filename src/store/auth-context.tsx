@@ -10,6 +10,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 	const [popup, setPopup] = useState(false);
 	const [isMobileNav, setMobileNav] = useState(false);
 	const [message, setMessage] = useState<MessageInfo>();
+	const [isAnimation, setIsAnimation] = useState(false);
+
 
     const [currentPage, setCurrentPage] = useState('');
  
@@ -57,6 +59,8 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
             setMobileNav,
             message,
             setMessage,
+            isAnimation,
+            setIsAnimation
           }}>
             {children}
         </AuthContext.Provider>

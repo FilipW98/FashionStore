@@ -1,4 +1,3 @@
-
 export interface Items {
 	id: number;
 	name: string;
@@ -42,7 +41,6 @@ export interface ItemsCardProps {
 	categoryName: string;
 }
 
-
 export interface ItemProps {
 	item: {
 		id: number;
@@ -69,4 +67,6 @@ export interface AuthContextProps {
 	setMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
 	message: MessageInfo | undefined;
 	setMessage: React.Dispatch<React.SetStateAction<MessageInfo | undefined>>;
+	isAnimation: boolean;
+	setIsAnimation: React.Dispatch<React.SetStateAction<boolean>>;
 }

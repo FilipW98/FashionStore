@@ -14,6 +14,8 @@ const Navigation = () => {
 		return null;
 	}
 
+	console.log(navCtx.isAnimation);
+
 	return (
 		<div className={style['navbar-container']}>
 			<div className={style.wave}>
@@ -81,7 +83,7 @@ const Navigation = () => {
 						navCtx.setIsCart(true);
 					}}>
 					<FaShoppingBag className={style.icon} size={26} />
-					<div className={style.counter}>
+					<div   className={ `${navCtx.isAnimation ? style['resize-couner'] : ''} ${style.counter} `}>
 						<p>{navCtx.itemsInCart.length}</p>
 					</div>
 				</button>

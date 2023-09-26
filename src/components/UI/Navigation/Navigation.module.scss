@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/animations';
 
 .navbar-container {
 	position: relative;
@@ -76,6 +77,10 @@
 			font-size: 0.7rem;
 		}
 	}
+}
+
+.resize-couner{
+	animation: resizeCounter 1s;
 }
 
 .shopping-cart-btn:hover .icon {
