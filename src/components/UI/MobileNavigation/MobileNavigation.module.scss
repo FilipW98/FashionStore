@@ -9,53 +9,57 @@
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	animation: backgroundFade 6s infinite alternate, ToggleMobileNav .5s;
+	background-color: #1c1c1c;
 
 	.mobileNav-btn {
+		color: $primary-color;
 		padding: 1em;
 		margin: 2em;
 	}
 
-	.logo-box {
-		margin-bottom: 6em;
 
-		h2 {
-			font-size: 2.5rem;
-			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.241);
-			border-bottom: 5px solid $secondary-color;
-		}
+	.title {
+		color: $primary-color;
+		font-size: 2.5rem;
+		margin-bottom: 2em;
+		border-bottom: 5px solid $secondary-color;
+		letter-spacing: 0.1em;
 	}
 
 	.active {
-		background-color: $secondary-color;
+		border-bottom: 3px solid $secondary-color;
 	}
+
+	.mobileBtn .active {
+		color: #1c1c1c;
+	}
+
 
 	.btn-box {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		text-align: center;
+	
 		.mobileBtn {
+			width: 70%;
 			margin-top: 1em;
 			padding: 1em;
 			font-size: 1.5rem;
-			border: 1px solid;
-			border-radius: 5px;
-			cursor: pointer;
 			text-decoration: none;
-			color: #333;
-		}
-		.mobileBtn:hover {
-			background-color: $background-item;
-			color: rgba(255, 255, 255, 0.896);
+			// color: #333;
+			color: $primary-color;
 		}
 	}	
 }
 
 .mobile-nav-box{
 	padding: 4em;
-	border: 2px solid black;
+	// border: 2px solid black;
 	border-radius: 6px;
-	background-color: #fff;
+	// background-color: #fff;
+	background-color: #1c1c1c;
+
 	.logo{
 		display: none;
 	}
@@ -68,6 +72,21 @@
 
 @media (max-width: 450px) {
 		.mobileNav {
+
+			.title {
+				font-size: 2rem;
+				margin-bottom: 1em;
+				border-bottom: 4px solid $secondary-color;
+			}
+
+			.btn-box{
+				.mobileBtn {
+					width: 80%;
+					font-size: 1.3rem;
+				}
+
+			}
+				
             .mobileNav-btn{
                 margin: 0;
             }

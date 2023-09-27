@@ -35,10 +35,10 @@ const MobileNavigation = () => {
 				</ExitButton>
 
 			<div className={style['mobile-nav-box']}>
-				<div className={style['logo-box']}>
+				{/* <div className={style['logo-box']}>
 					<img className={style.logo} src={hangerImage} alt='hanger' />
-					<h2>FashionStore</h2>
-				</div>
+				</div> */}
+				<h1 className={style.title}>FashionStore</h1>
 
 				<div className={style['btn-box']}>
 					<Link to='/Clothes'
