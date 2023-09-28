@@ -1,6 +1,6 @@
 @import './colors';
 
-@keyframes ToggleMobileNav {
+@keyframes toggleMobileNav {
     0% {
         transform: translateX(-100%);
         opacity: 0; 
@@ -10,6 +10,7 @@
         opacity: 1; 
     }
 }
+
 
 @keyframes closeMobileNav {
     0% {
@@ -21,15 +22,6 @@
         transform: translateX(-100%); 
         opacity: 0; 
 		
-    }
-}
-
-@keyframes backgroundFade {
-    0% {
-        background-color: rgb(222, 214, 97);  
-    }
-    100% {
-        background-color: $secondary-color; 
     }
 }
 

@@ -16,6 +16,7 @@
 	.link {
 		transition: transform 0.2s;
 		animation: flipCategoriesImg 1s;
+		margin: 0em  1em;
 	}
 	.link:hover {
 		transform: scale(1.05);
@@ -59,6 +60,9 @@
 @media (max-width: 1200px) {
 	.img-box {
 		margin: 1em 2em;
+		.link {
+			margin: 0em  ;
+		}
 		.img-text {
 			.category-img {
 				height: 100%;

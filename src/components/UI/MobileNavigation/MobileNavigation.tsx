@@ -2,7 +2,6 @@ import { useState, useContext } from 'react';
 import style from './MobileNavigation.module.scss';
 
 import ExitButton from '../Buttons/ExitButton/ExitButton';
-import hangerImage from '../../../assets/img/black-hanger.png';
 
 import AuthContext from '../../../store/auth-context';
 import { Link } from 'react-router-dom';
@@ -35,14 +34,11 @@ const MobileNavigation = () => {
 				</ExitButton>
 
 			<div className={style['mobile-nav-box']}>
-				{/* <div className={style['logo-box']}>
-					<img className={style.logo} src={hangerImage} alt='hanger' />
-				</div> */}
 				<h1 className={style.title}>FashionStore</h1>
 
 				<div className={style['btn-box']}>
 					<Link to='/Clothes'
-						className={` ${mobileNavCtx.currentPage === 'Clothes'? style.active : ''} ${style.mobileBtn}`}
+						className={` ${mobileNavCtx.currentPage === 'Clothes'? style.active : ''} ${style.mobileBtn} ${style.clothesBtn}`}
 						onClick={() => {
 							handleCloseNav();
 							mobileNavCtx.setCurrentPage('Clothes')
@@ -50,7 +46,7 @@ const MobileNavigation = () => {
 						Clothes
 					</Link>
 					<Link to='/Shoes'
-						className={` ${mobileNavCtx.currentPage === 'Shoes'  ? style.active : ''} ${style.mobileBtn}`}
+						className={` ${mobileNavCtx.currentPage === 'Shoes'  ? style.active : ''} ${style.mobileBtn} ${style.shoesBtn}`}
 						onClick={() => {
 							handleCloseNav();
 							mobileNavCtx.setCurrentPage('Shoes');
@@ -58,7 +54,7 @@ const MobileNavigation = () => {
 						Shoes
 					</Link>
 					<Link to="/Accessories"
-						className={` ${mobileNavCtx.currentPage === 'Accessories' ? style.active : ''} ${style.mobileBtn}`}
+						className={` ${mobileNavCtx.currentPage === 'Accessories' ? style.active : ''} ${style.mobileBtn} ${style.accessoriesBtn}`}
 						onClick={() => {
 							handleCloseNav();
 							mobileNavCtx.setCurrentPage('Accessories')
