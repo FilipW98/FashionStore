@@ -1,12 +1,18 @@
+// import {useState} from 'react';
+
 import './ShoppingCart.module.scss';
 import style from './ShoppingCart.module.scss';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
 import { FaTrashCan } from 'react-icons/fa6';
 
-import { ShoppingCartProps } from '../../types/types';
+import { ShoppingCartProps,Items } from '../../types/types';
+import React from 'react';
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems, setTotalPrice }) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems, setTotalPrice,setPopup,setMessage }) => {
+
+	
+	const clearedCart: Items[] = [];
 
 	const removeItemHandler = (itemId: number) => {
 		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
@@ -94,6 +100,11 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 						<ConfirmButton
 							onClick={() => {
 								setIsCart(false);
+								setPopup(true)
+								setMessage({
+									text: 'Thanks for shopping!',
+								});
+								setItems(clearedCart)
 							}}>
 							Checkout
 						</ConfirmButton>

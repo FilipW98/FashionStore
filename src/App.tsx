@@ -10,7 +10,7 @@ import Accesories from './components/pages/Accesories/Accesories';
 import AuthContext from './store/auth-context';
 import Footer from './components/UI/Footer/Footer';
 import MainPage from './components/pages/MainPage/MainPage';
-import RootLayout from "./components/pages/RootLayout/RootLayout";
+import RootLayout from './components/pages/RootLayout/RootLayout';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Newsletter from './components/UI/Newsletter/Newsletter';
@@ -22,49 +22,41 @@ function App() {
 		return null;
 	}
 
-	const {
-		isCart,
-		setIsCart,
-		itemsInCart,
-		setItems,
-		totalPrice,
-		setTotalPrice,
-		popup,
-		setPopup,
-		message,
-	} = authContext;
+	const { isCart, setIsCart, itemsInCart, setItems, totalPrice, setTotalPrice, popup, setPopup, message,setMessage } = authContext;
 
 	const router = createBrowserRouter([
-		{path: '/', 
-		element: <RootLayout/>, 
-		children: [
-			{ path: '/FashionStore', element: <MainPage /> },
-			{ path: '/Shoes', element: <Shoes /> },
-			{ path: '/Clothes', element: <Clothes /> },
-			{ path: '/Accessories', element: <Accesories /> },
-		]
-	},
-	]); 
+		{
+			path: '/',
+			element: <RootLayout />,
+			children: [
+				{ path: '/FashionStore', element: <MainPage /> },
+				{ path: '/Shoes', element: <Shoes /> },
+				{ path: '/Clothes', element: <Clothes /> },
+				{ path: '/Accessories', element: <Accesories /> },
+			],
+		},
+	]);
 
 	return (
 		<div className={style.container}>
-				{isCart && (
-					<ShoppingCart
-						setIsCart={setIsCart}
-						itemsInCart={itemsInCart}
-						totalPrice={totalPrice}
-						setItems={setItems}
-						setTotalPrice={setTotalPrice}
-					/>
-				)}
-				{popup && <Popup setPopup={setPopup} newText={message} />}
-				<div className={style.app}>
-					<RouterProvider router={router}/>
-					<Newsletter/>
-					<Footer />
-				</div>
+			{isCart && (
+				<ShoppingCart
+					setIsCart={setIsCart}
+					setPopup={setPopup}
+					setMessage={setMessage}
+					itemsInCart={itemsInCart}
+					totalPrice={totalPrice}
+					setItems={setItems}
+					setTotalPrice={setTotalPrice}
+				/>
+			)}
+			{popup && <Popup setPopup={setPopup} newText={message} />}
+			<div className={style.app}>
+				<RouterProvider router={router} />
+				<Newsletter />
+				<Footer />
 			</div>
-		
+		</div>
 	);
 }
 

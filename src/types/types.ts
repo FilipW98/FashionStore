@@ -12,6 +12,8 @@ export interface MessageInfo {
 
 export interface ShoppingCartProps {
 	setIsCart: (newIsCartValue: boolean) => void;
+	setPopup: (ispopup:boolean) => void;
+	setMessage: React.Dispatch<React.SetStateAction<MessageInfo | undefined>>
 	itemsInCart: Items[];
 	totalPrice: number;
 	setItems: (newItems: Items[]) => void;
