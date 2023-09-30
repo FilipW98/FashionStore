@@ -104,7 +104,8 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 								setMessage({
 									text: 'Thanks for shopping!',
 								});
-								setItems(clearedCart)
+								setItems(clearedCart);
+								setTotalPrice(0);
 							}}>
 							Checkout
 						</ConfirmButton>
