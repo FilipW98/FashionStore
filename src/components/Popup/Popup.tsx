@@ -1,6 +1,5 @@
 import ReactDom from 'react-dom';
 import style from './Popup.module.scss';
-
 import PopupCard from '../UI/Cards/PopupCard/PopupCard';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
