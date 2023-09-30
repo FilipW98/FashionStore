@@ -10,13 +10,12 @@
 .img-box {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1em;
+	gap: 2em;
 	margin: 2em 0;
 
 	.link {
 		transition: transform 0.2s;
 		animation: flipCategoriesImg 1s;
-		margin: 0em  1em;
 	}
 	.link:hover {
 		transform: scale(1.05);

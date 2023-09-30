@@ -7,3 +7,21 @@
     margin-top: 0.2em;
     background-color: $secondary-color;
 }
+
+@media (max-width: 768px){
+.underline{
+    width: 20%;
+}
+}
+
+@media (max-width: 576px){
+.underline{
+    width: 25%;
+}
+}
+@media (max-width: 450px){
+.underline{
+    width: 30%;
+}
+
+}
