@@ -59,7 +59,8 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 							return (
 								<div className={style['cart-item']} key={item.id}>
 									<img className={style['cart-img']} alt='shoe' src={item.image} />
-									<div className='item-info'>
+									<div className={style['cart-data']}>
+									<div className={style['item-info']}>
 										<h4>{item.name}</h4>
 										<span>${item.price * item.count}</span>
 									</div>
@@ -76,6 +77,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 											</option>
 										))}
 									</select>
+									</div>
 									<button
 										className={`btn ${style['remove-btn']}`}
 										onClick={() => {
