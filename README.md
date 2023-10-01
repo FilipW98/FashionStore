@@ -24,6 +24,13 @@
 - Deleting items from the cart
 - Responsive Web Design
 
+## Screenshots
+### - Main page
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:60%;">
+
+### - Accessories section
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessoriesDesktop.png" alt="accessories scetion screenshot" style="width:60%;">
+
 ## Installation
 
 To run this project, you must have the following dependencies installed:
