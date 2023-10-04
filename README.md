@@ -24,12 +24,25 @@
 - Deleting items from the cart
 - Responsive Web Design
 
+## I acquired skills in the following areas:
+- creating reuseable components,
+- working with React Portals,
+- I learned how to effectively use the `useEffect` hook to manage side effects, such as DOM manipulation,
+- I delved into the `useContext` hook and discovered how it simplifies the sharing of state between components,
+- I practiced the ability to extract the application's logic from the main `app.tsx` component into a dedicated `auth-context`,
+- I also learned how to use React Router with a RootLayout.
+
 ## Screenshots
-### - Main page
+### Main page
 <img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:60%;">
 
-### - Accessories section
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessoriesDesktop.png" alt="accessories scetion screenshot" style="width:60%;">
+### Accessories section
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:60%;">
+
+### Shopping Cart
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/shoppingCart.png" alt="shopping cart screenshot" style="width:60%;">
+
+
 
 ## Installation
 
