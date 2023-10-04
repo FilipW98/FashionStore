@@ -1,5 +1,3 @@
-// import {useState} from 'react';
-
 import './ShoppingCart.module.scss';
 import style from './ShoppingCart.module.scss';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
@@ -94,12 +92,12 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 				</div>
 				<div className={style['btn-price-box']}>
 					{itemsInCart.length !== 0 && (
+						<>
+						<div className={style.underline}></div>
 						<p className={style['total-price']}>
 							Total price: <span>${totalPrice}</span>
 						</p>
-					)}
-					{itemsInCart.length !== 0 && (
-						<ConfirmButton
+							<ConfirmButton
 							onClick={() => {
 								setIsCart(false);
 								setPopup(true)
@@ -111,6 +109,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 							}}>
 							Checkout
 						</ConfirmButton>
+						</>
 					)}
 				</div>
 			</div>

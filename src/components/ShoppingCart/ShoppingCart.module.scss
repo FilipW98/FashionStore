@@ -11,6 +11,7 @@
 .shoppingCart {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	position: relative;
 	max-width: 1000px;
 	padding: 3em;
@@ -95,7 +96,20 @@
 		}
 	}
 	.btn-price-box {
-		margin-bottom: 2em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-top: 2em;
+
+		.underline {
+			position: relative;
+			margin-top: 2em;
+			width: 60%;
+			height: 2px;
+			background-color: rgba(174, 174, 174, 0.844);
+		}
 	}
 }
 
@@ -129,6 +143,11 @@
 				font-size: 0.9rem;
 			}
 		}
+		.btn-price-box {
+			.underline {
+				width: 60%;
+			}
+		}
 	}
 }
 
@@ -158,14 +177,14 @@
 					justify-content: center;
 					.item-info {
 						margin-bottom: 1em;
-						h4{
-							margin-bottom: .6em;
+						h4 {
+							margin-bottom: 0.6em;
 						}
 					}
 				}
 
-				.remove-btn{
-				margin-right: 2em;
+				.remove-btn {
+					margin-right: 2em;
 				}
 			}
 		}
