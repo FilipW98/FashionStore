@@ -29,7 +29,7 @@
 - working with React Portals,
 - I learned how to effectively use the `useEffect` hook to manage side effects, such as DOM manipulation,
 - I delved into the `useContext` hook and discovered how it simplifies the sharing of state between components,
-- I practiced the ability to extract the application's logic from the main `app.tsx` component into a dedicated `auth-context`,
+- I practiced the ability to extract the application's logic from the main `app.tsx` component into a dedicated `auth-context` file,
 - I also learned how to use React Router with a RootLayout.
 
 ## Screenshots
