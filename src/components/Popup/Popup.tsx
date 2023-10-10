@@ -7,7 +7,6 @@ import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
 import { PopupProps } from '../../types/types';
 
 const Popup: React.FC<PopupProps> = ({ setPopup, newText }) => {
-
 	const text = newText ? newText.text : '';
 	const popupRoot = document.getElementById('popup-root');
 
@@ -23,8 +22,7 @@ const Popup: React.FC<PopupProps> = ({ setPopup, newText }) => {
 					size={29}
 					onClick={() => {
 						setPopup(false);
-					}}>
-					</ExitButton>
+					}}></ExitButton>
 				<div>
 					<p>{text}</p>
 					<ConfirmButton
