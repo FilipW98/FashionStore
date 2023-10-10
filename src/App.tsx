@@ -16,13 +16,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Newsletter from './components/UI/Newsletter/Newsletter';
 
 function App() {
-	const authContext = useContext(AuthContext);
+	const ctx = useContext(AuthContext);
 
-	if (!authContext) {
+	if (!ctx) {
 		return null;
 	}
-
-	const { isCart, setIsCart, itemsInCart, setItems, totalPrice, setTotalPrice, popup, setPopup, message,setMessage } = authContext;
 
 	const router = createBrowserRouter([
 		{
@@ -39,18 +37,8 @@ function App() {
 
 	return (
 		<div className={style.container}>
-			{isCart && (
-				<ShoppingCart
-					setIsCart={setIsCart}
-					setPopup={setPopup}
-					setMessage={setMessage}
-					itemsInCart={itemsInCart}
-					totalPrice={totalPrice}
-					setItems={setItems}
-					setTotalPrice={setTotalPrice}
-				/>
-			)}
-			{popup && <Popup setPopup={setPopup} newText={message} />}
+			{ctx.isCart && (<ShoppingCart/>)}
+			{ctx.popup && <Popup setPopup={ctx.setPopup} newText={ctx.message} />}
 			<div className={style.app}>
 				<RouterProvider router={router} />
 				<Newsletter />

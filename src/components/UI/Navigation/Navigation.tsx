@@ -14,7 +14,6 @@ const Navigation = () => {
 		return null;
 	}
 
-	console.log(navCtx.isAnimation);
 
 	return (
 		<div className={style['navbar-container']}>

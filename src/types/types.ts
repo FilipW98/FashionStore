@@ -1,3 +1,4 @@
+import  { ReactNode } from 'react';
 export interface Items {
 	id: number;
 	name: string;
@@ -5,19 +6,8 @@ export interface Items {
 	image: string;
 	count: number;
 }
-
 export interface MessageInfo {
 	text: string;
-}
-
-export interface ShoppingCartProps {
-	setIsCart: (newIsCartValue: boolean) => void;
-	setPopup: (ispopup:boolean) => void;
-	setMessage: React.Dispatch<React.SetStateAction<MessageInfo | undefined>>
-	itemsInCart: Items[];
-	totalPrice: number;
-	setItems: (newItems: Items[]) => void;
-	setTotalPrice: (newTotalPrice: number) => void;
 }
 
 export interface PopupProps {
@@ -26,11 +16,16 @@ export interface PopupProps {
 }
 
 export interface ButtonProps {
-	children: React.ReactNode;
+	// children: React.ReactNode;
 	onClick: () => void;
 	className: string;
 	size: number;
 }
+
+export interface ConfirmButtonProps {
+	children: ReactNode,
+	onClick: ()=> void;
+	}
 
 export interface PopupCardProps {
 	children: React.ReactNode;

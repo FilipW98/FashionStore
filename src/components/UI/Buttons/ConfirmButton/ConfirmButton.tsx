@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import style from './ConfirmButton.module.scss';
+import {ConfirmButtonProps} from "../../../../types/types"; 
 
-interface ConfirmButtonProps {
-children: ReactNode,
-onClick: ()=> void;
-}
 
 const ConfirmButton: React.FC<ConfirmButtonProps> = ({children,onClick}) => {
     return (

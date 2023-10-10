@@ -5,8 +5,6 @@ import AuthContext from '../../../store/auth-context';
 
 const Item: React.FC<ItemProps> = ({ item }) => {
 	
-
-
 	const ctx = useContext(AuthContext)
 	if(!ctx){
 		return null

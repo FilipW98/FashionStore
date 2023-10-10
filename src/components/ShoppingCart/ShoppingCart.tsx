@@ -1,24 +1,29 @@
-import './ShoppingCart.module.scss';
+import React, {useContext} from 'react';
 import style from './ShoppingCart.module.scss';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
 import { FaTrashCan } from 'react-icons/fa6';
 
-import { ShoppingCartProps,Items } from '../../types/types';
-import React from 'react';
+import {Items} from '../../types/types';
+import AuthContext from '../../store/auth-context';
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, totalPrice, setItems, setTotalPrice,setPopup,setMessage }) => {
+const ShoppingCart = () => {
 
+	const ctx = useContext(AuthContext);
+
+	if(!ctx){
+		return null
+	}
 	
 	const clearedCart: Items[] = [];
 
 	const removeItemHandler = (itemId: number) => {
-		const newItemsArr = itemsInCart.filter(item => item.id !== itemId);
-		setItems(newItemsArr);
+		const newItemsArr = ctx.itemsInCart.filter(item => item.id !== itemId);
+		ctx.setItems(newItemsArr);
 	};
 
 	const updateItemCount = (itemId: number, newCount: number) => {
-		const updatedItems = itemsInCart.map(item => {
+		const updatedItems = ctx.itemsInCart.map(item => {
 			if (item.id === itemId) {
 				return {
 					...item,
@@ -27,13 +32,13 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 			}
 			return item;
 		});
-		setItems(updatedItems);
+		ctx.setItems(updatedItems);
 
 		let newTotalPrice = 0;
 		updatedItems.forEach(item => {
 			newTotalPrice = newTotalPrice + item.price * item.count;
 		});
-		setTotalPrice(newTotalPrice);
+		ctx.setTotalPrice(newTotalPrice);
 	};
 
 	return (
@@ -45,14 +50,13 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 						<ExitButton
 						className={style.button} size={29}
 							onClick={() => {
-								setIsCart(false);
-							}}>
-							</ExitButton>
+								ctx.setIsCart(false);
+							}}></ExitButton>
 					</div>
-					<div className={`${style['cart-items']} ${itemsInCart.length === 0 ? style['no-border'] : ''}`}>
-						{itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
+					<div className={`${style['cart-items']} ${ctx.itemsInCart.length === 0 ? style['no-border'] : ''}`}>
+						{ctx.itemsInCart.length === 0 && <span className='empty-text'>Your basket is currently empty</span>}
 
-						{itemsInCart.map(item => {
+						{ctx.itemsInCart.map(item => {
 							const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 							return (
 								<div className={style['cart-item']} key={item.id}>
@@ -79,9 +83,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 									<button
 										className={`btn ${style['remove-btn']}`}
 										onClick={() => {
-											const newTotalPrice = totalPrice - item.price * item.count;
+											const newTotalPrice = ctx.totalPrice - item.price * item.count;
 											removeItemHandler(item.id);
-											setTotalPrice(newTotalPrice);
+											ctx.setTotalPrice(newTotalPrice);
 										}}>
 										{<FaTrashCan size={20} />}
 									</button>
@@ -91,21 +95,21 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ setIsCart, itemsInCart, tot
 					</div>
 				</div>
 				<div className={style['btn-price-box']}>
-					{itemsInCart.length !== 0 && (
+					{ctx.itemsInCart.length !== 0 && (
 						<>
 						<div className={style.underline}></div>
 						<p className={style['total-price']}>
-							Total price: <span>${totalPrice}</span>
+							Total price: <span>${ctx.totalPrice}</span>
 						</p>
 							<ConfirmButton
 							onClick={() => {
-								setIsCart(false);
-								setPopup(true)
-								setMessage({
+								ctx.setIsCart(false);
+								ctx.setPopup(true)
+								ctx.setMessage({
 									text: 'Thanks for shopping!',
 								});
-								setItems(clearedCart);
-								setTotalPrice(0);
+								ctx.setItems(clearedCart);
+								ctx.setTotalPrice(0);
 							}}>
 							Checkout
 						</ConfirmButton>
