@@ -4,10 +4,9 @@ import { ItemProps } from '../../../types/types';
 import AuthContext from '../../../store/auth-context';
 
 const Item: React.FC<ItemProps> = ({ item }) => {
-	
-	const ctx = useContext(AuthContext)
-	if(!ctx){
-		return null
+	const ctx = useContext(AuthContext);
+	if (!ctx) {
+		return null;
 	}
 
 	return (
@@ -23,8 +22,8 @@ const Item: React.FC<ItemProps> = ({ item }) => {
 						ctx.setIsAnimation(true);
 
 						setTimeout(() => {
-							ctx.setIsAnimation(false); 
-						  }, 500); 
+							ctx.setIsAnimation(false);
+						}, 500);
 					}}>
 					Add to cart
 				</button>

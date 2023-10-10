@@ -37,7 +37,7 @@ function App() {
 
 	return (
 		<div className={style.container}>
-			{ctx.isCart && (<ShoppingCart/>)}
+			{ctx.isCart && <ShoppingCart />}
 			{ctx.popup && <Popup setPopup={ctx.setPopup} newText={ctx.message} />}
 			<div className={style.app}>
 				<RouterProvider router={router} />

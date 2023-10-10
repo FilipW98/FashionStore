@@ -1,20 +1,19 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import style from './ShoppingCart.module.scss';
 import ExitButton from '../UI/Buttons/ExitButton/ExitButton';
 import ConfirmButton from '../UI/Buttons/ConfirmButton/ConfirmButton';
 import { FaTrashCan } from 'react-icons/fa6';
 
-import {Items} from '../../types/types';
+import { Items } from '../../types/types';
 import AuthContext from '../../store/auth-context';
 
 const ShoppingCart = () => {
-
 	const ctx = useContext(AuthContext);
 
-	if(!ctx){
-		return null
+	if (!ctx) {
+		return null;
 	}
-	
+
 	const clearedCart: Items[] = [];
 
 	const removeItemHandler = (itemId: number) => {
@@ -48,7 +47,8 @@ const ShoppingCart = () => {
 					<div className={style.header}>
 						<h2>Shopping cart</h2>
 						<ExitButton
-						className={style.button} size={29}
+							className={style.button}
+							size={29}
 							onClick={() => {
 								ctx.setIsCart(false);
 							}}></ExitButton>
@@ -62,23 +62,23 @@ const ShoppingCart = () => {
 								<div className={style['cart-item']} key={item.id}>
 									<img className={style['cart-img']} alt='shoe' src={item.image} />
 									<div className={style['cart-data']}>
-									<div className={style['item-info']}>
-										<h4>{item.name}</h4>
-										<span>${item.price * item.count}</span>
-									</div>
-									<select
-										className={style['item-number']}
-										onChange={event => {
-											const newCount = parseInt(event.target.value);
-											updateItemCount(item.id, newCount);
-										}}
-										value={item.count}>
-										{numbersArr.map(num => (
-											<option value={num} key={num}>
-												{num}
-											</option>
-										))}
-									</select>
+										<div className={style['item-info']}>
+											<h4>{item.name}</h4>
+											<span>${item.price * item.count}</span>
+										</div>
+										<select
+											className={style['item-number']}
+											onChange={event => {
+												const newCount = parseInt(event.target.value);
+												updateItemCount(item.id, newCount);
+											}}
+											value={item.count}>
+											{numbersArr.map(num => (
+												<option value={num} key={num}>
+													{num}
+												</option>
+											))}
+										</select>
 									</div>
 									<button
 										className={`btn ${style['remove-btn']}`}
@@ -97,22 +97,22 @@ const ShoppingCart = () => {
 				<div className={style['btn-price-box']}>
 					{ctx.itemsInCart.length !== 0 && (
 						<>
-						<div className={style.underline}></div>
-						<p className={style['total-price']}>
-							Total price: <span>${ctx.totalPrice}</span>
-						</p>
+							<div className={style.underline}></div>
+							<p className={style['total-price']}>
+								Total price: <span>${ctx.totalPrice}</span>
+							</p>
 							<ConfirmButton
-							onClick={() => {
-								ctx.setIsCart(false);
-								ctx.setPopup(true)
-								ctx.setMessage({
-									text: 'Thanks for shopping!',
-								});
-								ctx.setItems(clearedCart);
-								ctx.setTotalPrice(0);
-							}}>
-							Checkout
-						</ConfirmButton>
+								onClick={() => {
+									ctx.setIsCart(false);
+									ctx.setPopup(true);
+									ctx.setMessage({
+										text: 'Thanks for shopping!',
+									});
+									ctx.setItems(clearedCart);
+									ctx.setTotalPrice(0);
+								}}>
+								Checkout
+							</ConfirmButton>
 						</>
 					)}
 				</div>

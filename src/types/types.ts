@@ -1,4 +1,4 @@
-import  { ReactNode } from 'react';
+import { ReactNode } from 'react';
 export interface Items {
 	id: number;
 	name: string;
@@ -16,16 +16,15 @@ export interface PopupProps {
 }
 
 export interface ButtonProps {
-	// children: React.ReactNode;
 	onClick: () => void;
 	className: string;
 	size: number;
 }
 
 export interface ConfirmButtonProps {
-	children: ReactNode,
-	onClick: ()=> void;
-	}
+	children: ReactNode;
+	onClick: () => void;
+}
 
 export interface PopupCardProps {
 	children: React.ReactNode;
