@@ -40,7 +40,13 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
             document.body.style.overflow = 'scroll';
             document.body.style.overflowX = 'hidden';
         }
-      }, [isMobileNav]);
+        if (popup){
+          document.body.style.overflow = 'hidden';
+        }
+        if(isCart){
+          document.body.style.overflow = 'hidden';
+        }
+      }, [isMobileNav,popup,isCart]);
 
 
     return (
