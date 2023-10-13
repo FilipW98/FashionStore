@@ -15,8 +15,8 @@
 	align-items: center;
 	position: relative;
 	max-width: 1000px;
-	padding: 3em;
-	margin: 6em auto;
+	padding: 2em;
+	margin: 2em auto;
 	border-radius: 8px;
 	text-align: center;
 	background-color: $primary-color;
@@ -67,7 +67,7 @@
 				margin-bottom: 0.4em;
 			}
 			.cart-img {
-				width: 25%;
+				width: 22%;
 				margin-left: 1.5em;
 			}
 			.remove-btn {
@@ -102,7 +102,7 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		margin-top: 2em;
+		margin-top: 1em;
 
 		.underline {
 			position: relative;
@@ -139,6 +139,7 @@
 @media (max-width: 768px) {
 	.shoppingCart {
 		padding: 2em 1em;
+		margin-top: 6em;
 		.cart-items {
 			.cart-item {
 				font-size: 0.9rem;
@@ -156,6 +157,7 @@
 	.shoppingCart {
 		width: 100%;
 		padding: 1.5em 1em;
+		margin-top: 0em;
 
 		.cart-items {
 			.cart-item {
