@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
- Fashion Store represents an online shop where you can add selected items to your shopping cart. Then You can go to the cart, where You can add more items or remove them. The cart also shows the total price of all products added to it. This project was bootstrapped with Create React App. This application is still under construction.
+ Fashion Store represents an online shop where you can add selected items to your shopping cart. Then You can go to the cart, where You can add more items or remove them. The cart also shows the total price of all products added to it. This project was bootstrapped with Create React App and is still under construction.
   
 </div>
 
