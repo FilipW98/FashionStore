@@ -43,7 +43,7 @@
 		flex-direction: column;
 		align-items: center;
 		overflow-y: scroll;
-		max-height: 400px;
+		max-height: 50vh;
 		padding: 1em 0em;
 		.cart-item {
 			display: flex;
@@ -139,7 +139,6 @@
 @media (max-width: 768px) {
 	.shoppingCart {
 		padding: 2em 1em;
-		// margin-top: 6em;
 		.cart-items {
 			.cart-item {
 				font-size: 0.9rem;
@@ -193,4 +192,16 @@
 			}
 		}
 	}
+}
+
+@media (max-width: 376px){
+	.underline{
+		display: none;
+	}
+
+	.shoppingCart{
+		.btn-price-box {
+			margin: 0;
+	}
+}
 }
