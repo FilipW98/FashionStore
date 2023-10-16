@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FashionStore/static/css/main.2a2ae862.css",
+    "main.css": "/FashionStore/static/css/main.2b8920d4.css",
     "main.js": "/FashionStore/static/js/main.f31cfe4b.js",
     "static/media/jeans-jacket.png": "/FashionStore/static/media/jeans-jacket.cba83459516a6444a654.png",
     "static/media/gray-shoe.png": "/FashionStore/static/media/gray-shoe.d166ffd4a7ebdb8344be.png",
@@ -24,11 +24,11 @@
     "static/media/black-nike2.png": "/FashionStore/static/media/black-nike2.0d5c2cf2dc2b358c3b4d.png",
     "static/media/black-nike.png": "/FashionStore/static/media/black-nike.b1bbeda0810a0e7c7c93.png",
     "index.html": "/FashionStore/index.html",
-    "main.2a2ae862.css.map": "/FashionStore/static/css/main.2a2ae862.css.map",
+    "main.2b8920d4.css.map": "/FashionStore/static/css/main.2b8920d4.css.map",
     "main.f31cfe4b.js.map": "/FashionStore/static/js/main.f31cfe4b.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a2ae862.css",
+    "static/css/main.2b8920d4.css",
     "static/js/main.f31cfe4b.js"
   ]
 }
