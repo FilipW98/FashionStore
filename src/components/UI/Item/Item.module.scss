@@ -34,14 +34,21 @@
             background-color: #fff;
         }
 
+       
+    }
+}
+
+
+@media(min-width:768px){
+    .item:hover{
+        transform: scale(1.02);
+    }
+
+    .item-data{
         .add-btn:hover {
             background-color: $secondary-color;
         }
     }
-}
-
-.item:hover{
-    transform: scale(1.02);
 }
 
 @media(max-width: 1200px){
