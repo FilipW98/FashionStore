@@ -14,7 +14,8 @@
 
 	.wave {
 		position: absolute;
-		bottom: -30px;
+		// bottom: -30px;
+		bottom: -53px;
 		left: 0;
 		width: 100%;
 		transform: rotate(180deg);
@@ -24,7 +25,8 @@
 		position: relative;
 		display: block;
 		width: calc(100% + 1.3px);
-		height: 30px;
+		// height: 30px;
+		height: 57px;
 	}
 
 	.icons-box {
