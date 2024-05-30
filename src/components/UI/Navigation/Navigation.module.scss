@@ -5,7 +5,6 @@
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	// margin-bottom: 9em;
 	min-height: 11vh;
 	z-index: 0;
 	background-color: #1c1c1cf2;
@@ -14,7 +13,6 @@
 
 	.wave {
 		position: absolute;
-		// bottom: -30px;
 		bottom: -53px;
 		left: 0;
 		width: 100%;
@@ -25,8 +23,8 @@
 		position: relative;
 		display: block;
 		width: calc(100% + 1.3px);
-		// height: 30px;
 		height: 57px;
+		max-width: 1440px;
 	}
 
 	.icons-box {
@@ -64,6 +62,8 @@
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+	transition: .3s;
+
 
 	.counter {
 		position: absolute;
@@ -105,6 +105,7 @@
 	padding: 0 1em;
 	color: #fff;
 	text-decoration: none;
+	transition: .3s;
 }
 .category-link:hover {
 	color: $secondary-color;
@@ -112,6 +113,8 @@
 
 .icon {
 	color: #fff;
+	transition: .3s;
+
 }
 
 .icon:hover {

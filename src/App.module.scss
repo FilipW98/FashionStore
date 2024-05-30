@@ -1,8 +1,15 @@
 @import './styles/colors';
 
+
+
+.fullWidthContainer {
+	width: 100%;
+	background-color: #f8f7f7;
+}
+
 .container {
 	position: relative;
-	max-width: 2200px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 

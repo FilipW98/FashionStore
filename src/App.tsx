@@ -35,17 +35,22 @@ function App() {
 		},
 	]);
 
+
+
 	return (
-		<div className={style.container}>
+		<div className={style.fullWidthContainer}>
 			{ctx.isCart && <ShoppingCart />}
 			{ctx.popup && <Popup setPopup={ctx.setPopup} newText={ctx.message} />}
-			<div className={style.app}>
-				<RouterProvider router={router} />
-				<Newsletter />
-				<Footer />
+			<div className={style.container}>
+				<div className={style.content}>
+					<RouterProvider router={router} />
+					<Newsletter />
+					<Footer />
+				</div>
 			</div>
 		</div>
 	);
+
 }
 
 export default App;
