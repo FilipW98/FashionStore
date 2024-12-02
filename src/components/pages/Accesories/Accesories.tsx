@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import ItemsCard from '../../UI/Cards/ItemsCard/ItemsCard';
 import Item from '../../UI/Item/Item';
 
