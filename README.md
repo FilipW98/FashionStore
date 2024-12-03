@@ -31,13 +31,13 @@
 
 ## Screenshots
 ### Main page
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:10%;">
 
 ### Accessories section
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:100%;">
 
 ### Shopping Cart
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/shoppingCart.png" alt="shopping cart screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/shoppingCart.png" alt="shopping cart screenshot" style="width:100%;">
 
 
 
