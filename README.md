@@ -31,7 +31,7 @@
 
 ## Screenshots
 ### Main page
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:10%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:100%;">
 
 ### Accessories section
 <img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:100%;">
