@@ -35,8 +35,6 @@ function App() {
 		},
 	]);
 
-
-
 	return (
 		<div className={style.fullWidthContainer}>
 			{ctx.isCart && <ShoppingCart />}
@@ -50,7 +48,6 @@ function App() {
 			</div>
 		</div>
 	);
-
 }
 
 export default App;

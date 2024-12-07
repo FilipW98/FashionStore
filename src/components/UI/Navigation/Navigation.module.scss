@@ -2,18 +2,20 @@
 @import '../../../styles/animations';
 
 .navbar-container {
-	position: relative;
+	position: fixed;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	min-height: 11vh;
 	z-index: 0;
-	background-color: #1c1c1cf2;
+	background-color: #272727;
 	z-index: 9;
 
 	.content-box {
 		max-width: 1440px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		width: 100%;
 		margin: 0 auto;
 	}

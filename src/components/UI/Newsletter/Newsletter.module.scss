@@ -41,6 +41,8 @@
 		color: #333;
 		font-weight: bold;
 		cursor: pointer;
+		border:  1px solid transparent;
+		transition: .3s;
 	}
 
 	.btn:hover {
@@ -51,7 +53,7 @@
 
 	.wave {
 		position: absolute;
-		top: -31px;
+		top: -30px;
 		left: 0;
 		width: 100%;
 	}
