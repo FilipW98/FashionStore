@@ -11,10 +11,7 @@
 
 ## Tech Stack
 
-  
-<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" alt="Type Script icon" width="47" height="47"/> </a> 
-<a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" alt="React icon" width="47" height="47"/> </a> 
-<a href="https://sass-lang.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sass.svg" alt="Sass icon" width="47" height="47"/> </a> 
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg" alt="Type Script icon" width="47" height="47"/> <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/React-Dark.svg" alt="React icon" width="47" height="47"/><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sass.svg" alt="Sass icon" width="47" height="47"/> 
 
 ## Features
 
@@ -34,13 +31,13 @@
 
 ## Screenshots
 ### Main page
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/mainPage.png" alt="main page screenshot" style="width:100%;">
 
 ### Accessories section
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/accessories.png" alt="accessories section screenshot" style="width:100%;">
 
 ### Shopping Cart
-<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/shoppingCart.png" alt="shopping cart screenshot" style="width:60%;">
+<img src="https://github.com/FilipW98/FashionStore/blob/master/src/assets/screenshots/shoppingCart.png" alt="shopping cart screenshot" style="width:100%;">
 
 
 
