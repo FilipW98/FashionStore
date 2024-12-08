@@ -13,6 +13,15 @@
 	max-width: 320px;
 	max-height: 440px;
 	height: 100%;
+
+	@media (max-width: 1200px) {
+		width: auto;
+	}
+	@media (max-width: 450px) {
+		justify-self: center;
+		width: 100%;
+	}
+
 	.item-img {
 		width: 70%;
 		max-height: 290px;
@@ -53,11 +62,5 @@
 		.add-btn:hover {
 			background-color: $secondary-color;
 		}
-	}
-}
-
-@media (max-width: 1200px) {
-	.item {
-		width: auto;
 	}
 }

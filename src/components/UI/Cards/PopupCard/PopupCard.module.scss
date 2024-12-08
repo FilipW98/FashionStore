@@ -7,4 +7,7 @@
     text-align: center;
     border-radius: 8px;
 	background-color: #eee;
+    @media(max-width:575px){
+        width: 90%;
+    }
 }
