@@ -26,6 +26,37 @@
 }
 
 
+@keyframes slideToRight{
+    0%{
+         opacity: 0;
+       transform: translateX(-50%);
+    }
+    100%{
+         opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes slideToLeft{
+    0%{
+         opacity: 0;
+       transform: translateX(50%);
+    }
+    100%{
+         opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes slideToTop{
+    0%{
+         opacity: 0;
+       transform: translateY(50%);
+    }
+    100%{
+         opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 @keyframes flipCategoriesImg {
 
     0% {
